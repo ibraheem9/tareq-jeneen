@@ -292,6 +292,15 @@ html,body{
 .audio-btn.muted .ico-on{display:none}
 .audio-btn.muted .ico-off{display:block}
 .audio-btn.muted{color:#94a3b8; border-color:rgba(255,255,255,.1)}
+.audio-btn.playing{
+  border-color:rgba(253,224,71,.5);
+  box-shadow:0 0 15px rgba(253,224,71,.35);
+  animation:pulseAudio 2.2s infinite ease-in-out;
+}
+@keyframes pulseAudio{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.08); box-shadow:0 0 20px var(--glow-1)}
+}
 
 /* ================= مسرح البطاقات (Stage & Steps) ================= */
 .stage{
@@ -724,7 +733,7 @@ html,body{
 
       <div class="top-controls">
         <!-- زر الصوت للموسيقى في الخلفية -->
-        <button id="audioToggle" class="audio-btn" aria-label="تشغيل/إيقاف الموسيقى" title="تشغيل أو كتم الموسيقى">
+        <button id="audioToggle" class="audio-btn muted" aria-label="تشغيل الموسيقى" title="تشغيل الموسيقى">
           <svg class="ico-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M11 5 6 9H2v6h4l5 4z"/>
             <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
@@ -921,166 +930,109 @@ html,body{
 
 </div>
 
+<!-- عنصر الصوت للموسيقى الملكية في الخلفية -->
+<audio id="weddingAudio" src="assets/audio/royal.mp3" loop preload="auto" playsinline webkit-playsinline></audio>
+
 <!-- مشغل يوتيوب المخفي كاحتياط -->
 <div id="ytHost" aria-hidden="true"><div id="ytPlayer"></div></div>
 
 <script>
 /* ============================================================
-   1) محرك الموسيقى في الخلفية (تشغيل محلي هادئ + يوتيوب كاحتياط)
+   1) محرك الموسيقى الملكية في الخلفية (تشغيل فوري متزامن مع زر البداية)
    ============================================================ */
-const LOCAL_AUDIO_SRC = 'assets/audio/royal.mp3';
-const YT_VIDEO_ID = '3MoBO8B_dg4';
+const weddingAudio = document.getElementById('weddingAudio');
+const audioBtn     = document.getElementById('audioToggle');
 
-const audioBtn = document.getElementById('audioToggle');
+let isUserMuted   = false;
+let audioUnlocked = false;
 
-const Music = (() => {
-  let localAudio = null;
-  let usingLocal = true;
-  let ytPlayer = null;
-  let ytReady = false;
-  let playing = false;
-  let muted = false;
-  let pendingPlay = false;
-
+// دالة فك قيود الصوت لمتصفحات الجوال (iOS Safari & Android)
+function unlockAudioEngine() {
   try {
-    localAudio = new Audio(LOCAL_AUDIO_SRC);
-    localAudio.loop = true;
-    localAudio.volume = 0.55;
-    localAudio.preload = 'auto';
-
-    localAudio.addEventListener('playing', () => {
-      playing = true;
-      audioBtn.classList.remove('muted');
-    });
-    localAudio.addEventListener('pause', () => {
-      playing = false;
-      audioBtn.classList.add('muted');
-    });
-    localAudio.addEventListener('error', () => {
-      console.warn('Local audio fallback to YouTube');
-      usingLocal = false;
-      loadYTAPI();
-      if (pendingPlay) actuallyPlay();
-    });
-  } catch(e) {
-    usingLocal = false;
-    loadYTAPI();
-  }
-
-  function loadYTAPI(){
-    if (window.YT && window.YT.Player) return;
-    const tag = document.createElement('script');
-    tag.src = 'assets/js/iframe_api.js';
-    tag.onerror = () => {
-      const fallbackTag = document.createElement('script');
-      fallbackTag.src = 'https://www.youtube.com/iframe_api';
-      document.head.appendChild(fallbackTag);
-    };
-    document.head.appendChild(tag);
-  }
-
-  window.onYouTubeIframeAPIReady = function(){
-    ytPlayer = new YT.Player('ytPlayer', {
-      height: '1', width: '1',
-      videoId: YT_VIDEO_ID,
-      playerVars: {
-        autoplay: 0, loop: 1, playlist: YT_VIDEO_ID,
-        controls: 0, disablekb: 1, fs: 0, iv_load_policy: 3,
-        modestbranding: 1, playsinline: 1, rel: 0
-      },
-      events: {
-        onReady: (e) => {
-          ytReady = true;
-          e.target.setVolume(55);
-          if (pendingPlay) { pendingPlay = false; actuallyPlay(); }
-        },
-        onStateChange: (e) => {
-          if (e.data === YT.PlayerState.PLAYING) {
-            playing = true;
-            audioBtn.classList.remove('muted');
-          }
-          if (e.data === YT.PlayerState.PAUSED || e.data === YT.PlayerState.ENDED){
-            playing = false;
-            audioBtn.classList.add('muted');
-          }
-        }
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (AudioContextClass) {
+      if (!window.__weddingAudioCtx) {
+        window.__weddingAudioCtx = new AudioContextClass();
       }
-    });
-  };
-
-  function actuallyPlay(){
-    if (usingLocal && localAudio) {
-      localAudio.muted = false;
-      const p = localAudio.play();
-      if (p !== undefined) {
-        p.then(() => {
-          playing = true;
-          audioBtn.classList.remove('muted');
-        }).catch(() => {
-          // المتصفحات تتطلب تفاعل المستخدم أولاً
-        });
+      if (window.__weddingAudioCtx.state === 'suspended') {
+        window.__weddingAudioCtx.resume();
       }
-      return;
     }
-
-    if (!ytPlayer || !ytReady) {
-      loadYTAPI();
-      pendingPlay = true;
-      return;
-    }
-    ytPlayer.unMute();
-    ytPlayer.playVideo();
-  }
-
-  function start(){
-    actuallyPlay();
-  }
-
-  function toggleMute(){
-    if (usingLocal && localAudio) {
-      if (localAudio.paused) {
-        localAudio.play();
-        muted = false;
-        audioBtn.classList.remove('muted');
-        return true;
-      }
-      muted = !muted;
-      localAudio.muted = muted;
-      audioBtn.classList.toggle('muted', muted);
-      return !muted;
-    }
-
-    if (!ytPlayer || !ytReady) return !muted;
-    if (muted){
-      ytPlayer.unMute();
-      ytPlayer.playVideo();
-      muted = false;
-      audioBtn.classList.remove('muted');
-    } else {
-      ytPlayer.mute();
-      muted = true;
-      audioBtn.classList.add('muted');
-    }
-    return !muted;
-  }
-
-  return { start, toggleMute, isPlaying: () => playing };
-})();
-
-// تشغيل الموسيقى في الخلفية
-Music.start();
-
-// فك قيود التشغيل التلقائي للمتصفح مع أول لمسة للشاشة
-const unlockEvents = ['touchstart', 'pointerdown', 'click'];
-function unlockMusic(){
-  Music.start();
-  unlockEvents.forEach(evt => window.removeEventListener(evt, unlockMusic, true));
+  } catch(e) {}
 }
-unlockEvents.forEach(evt => window.addEventListener(evt, unlockMusic, { capture: true, once: true }));
 
+function updateAudioUI(isPlaying) {
+  if (isPlaying) {
+    audioBtn.classList.remove('muted');
+    audioBtn.classList.add('playing');
+    audioBtn.setAttribute('title', 'كتم الموسيقى');
+  } else {
+    audioBtn.classList.add('muted');
+    audioBtn.classList.remove('playing');
+    audioBtn.setAttribute('title', 'تشغيل الموسيقى');
+  }
+}
+
+// تشغيل فوري بدون أي تأخير عند النقر
+function startMusicNow() {
+  if (isUserMuted) return;
+  unlockAudioEngine();
+  
+  if (weddingAudio) {
+    weddingAudio.muted = false;
+    weddingAudio.volume = 0.65;
+    const playPromise = weddingAudio.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        audioUnlocked = true;
+        updateAudioUI(true);
+      }).catch((err) => {
+        // ينتظر أول نقرة صريحة من المستخدم
+        console.log('Audio autoplay waiting for user tap');
+      });
+    }
+  }
+}
+
+function toggleAudioMute() {
+  unlockAudioEngine();
+  if (!weddingAudio) return;
+
+  if (weddingAudio.paused) {
+    isUserMuted = false;
+    weddingAudio.muted = false;
+    weddingAudio.play().then(() => {
+      audioUnlocked = true;
+      updateAudioUI(true);
+    }).catch(() => {});
+  } else {
+    isUserMuted = true;
+    weddingAudio.pause();
+    updateAudioUI(false);
+  }
+}
+
+if (weddingAudio) {
+  weddingAudio.addEventListener('playing', () => {
+    audioUnlocked = true;
+    updateAudioUI(true);
+  });
+  weddingAudio.addEventListener('pause', () => {
+    if (weddingAudio.paused) updateAudioUI(false);
+  });
+  weddingAudio.addEventListener('ended', () => {
+    weddingAudio.currentTime = 0;
+    weddingAudio.play().catch(() => {});
+  });
+}
+
+// محاولة تشغيل تلقائي أولية
+startMusicNow();
+
+// تفاعل زر كتم / تشغيل الصوت
 audioBtn.addEventListener('click', (e) => {
   e.stopPropagation();
-  Music.toggleMute();
+  toggleAudioMute();
 });
 
 /* ============================================================
@@ -1161,20 +1113,39 @@ function goTo(i){
   try { history.replaceState(null, '', '#step' + (index + 1)); } catch(e){}
 }
 
-// أزرار التنقل هادئة وسلسة (بدون موسيقى تنقل)
+// أزرار التنقل: تشغيل الموسيقى فوراً على الجوال عند الضغط على زر البداية أو أي تنقل
 nextBtn.addEventListener('click', () => {
+  startMusicNow();
   if (index === steps.length - 1) goTo(0);
   else goTo(index + 1);
 });
 
+// استجابة فورية فائقة السرعة للمس على الهواتف لزر البداية
+nextBtn.addEventListener('touchend', () => {
+  startMusicNow();
+}, { passive: true });
+
 prevBtn.addEventListener('click', () => {
+  startMusicNow();
   if (index > 0) goTo(index - 1);
 });
 
 storyBars.forEach((bar, idx) => {
   bar.addEventListener('click', () => {
+    startMusicNow();
     goTo(idx);
   });
+});
+
+// مستمع عام لأي تفاعل لمسي على الشاشة لفك قيود الصوت
+const unlockEvents = ['touchstart', 'touchend', 'click', 'pointerdown'];
+function globalUnlockAudio(){
+  if (!audioUnlocked && !isUserMuted) {
+    startMusicNow();
+  }
+}
+unlockEvents.forEach(evt => {
+  window.addEventListener(evt, globalUnlockAudio, { passive: true });
 });
 
 /* ============================================================
