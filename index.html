@@ -2,1413 +2,1555 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<meta name="theme-color" content="#031219">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>دعوة زفاف | طارق &amp; جنين</title>
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>عقد قران | المهندس إبراهيم &amp; المهندسة رزان</title>
 
-<!-- الخطوط العربية المحلية الممتازة (Aref Ruqaa, Alexandria, Amiri, Cairo) -->
+<!-- الخطوط العربية الأصيلة -->
 <link rel="stylesheet" href="assets/css/fonts.css">
 
 <style>
+/* ================================================================
+   1. المتغيرات والتدرجات اللونية (Colorful White: White, Pink, Blue, Red Roses, Gold)
+   ================================================================ */
+:root {
+  --c-white:        #ffffff;
+  --c-paper:        #fcfdfd;
+  --c-bg:           #f8fafc;
+
+  /* درجات الوردي الزاهي (Vibrant Pinks) */
+  --c-pink-wash:    rgba(244, 114, 182, 0.22);
+  --c-pink-pastel:  #fce7f3;
+  --c-pink-soft:    #fbcfe8;
+  --c-pink-rose:    #f472b6;
+  --c-pink-vibrant: #ec4899;
+  --c-pink-deep:    #be185d;
+
+  /* درجات الأزرق السماوي (Sky & Royal Blues) */
+  --c-blue-wash:    rgba(56, 189, 248, 0.22);
+  --c-blue-sky:     #e0f2fe;
+  --c-blue-pastel:  #bae6fd;
+  --c-blue-azure:   #7dd3fc;
+  --c-blue-royal:   #0284c7;
+
+  /* درجات الورد الأحمر الملكي (Velvety Red Roses) */
+  --c-red-light:    #f87171;
+  --c-red-rose:     #ef4444;
+  --c-red-deep:     #dc2626;
+  --c-red-ruby:     #991b1b;
+  --c-red-velvet:   #7f1d1d;
+
+  /* الذهب الملكي للعناوين (Royal Gold Calligraphy) */
+  --c-gold-grad:    linear-gradient(135deg, #78350f 0%, #b45309 25%, #d97706 45%, #f59e0b 60%, #b45309 85%, #78350f 100%);
+  --c-gold-solid:   #b45309;
+  --c-gold-warm:    #d97706;
+  --c-gold-line:    linear-gradient(90deg, transparent 0%, rgba(217, 119, 6, 0.2) 20%, #d97706 50%, rgba(217, 119, 6, 0.2) 80%, transparent 100%);
+
+  /* نصوص العقد */
+  --c-text-main:    #1e293b;
+  --c-text-body:    #334155;
+  --c-text-muted:   #64748b;
+
+  /* الخطوط */
+  --font-calligraphy: 'Aref Ruqaa', 'Amiri', serif;
+  --font-quran:       'Amiri', 'Aref Ruqaa', serif;
+  --font-modern:      'Alexandria', 'Cairo', system-ui, sans-serif;
+}
+
+/* إعادة الضبط */
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 
-:root{
-  --bg:#031219;
-  
-  /* ألوان وتدرجات سحر الشفق الخلاب (Aurora Harmony) الدائمة */
-  --c-gold:#fde047;
-  --c-amber:#f59e0b;
-  --c-rose:#fb7185;
-  --c-magenta:#ec4899;
-  --c-violet:#a855f7;
-  --c-lav:#c084fc;
-  --c-cyan:#38bdf8;
-  --c-emerald:#34d399;
-  --c-mint:#e8fffb;
-  --c-muted:#a3c7cf;
-
-  /* خطوط عربية ملكية وحديثة */
-  --font-calligraphy:'Aref Ruqaa', 'Amiri', serif;
-  --font-modern:'Alexandria', 'Cairo', system-ui, sans-serif;
-  --font-classical:'Amiri', serif;
-
-  --grad-names:linear-gradient(135deg, #ffffff 0%, #fef08a 18%, #fca5a5 38%, #e9d5ff 62%, #67e8f9 82%, #fde047 100%);
-  --grad-couple:linear-gradient(90deg, #fef08a 0%, #fb7185 32%, #c084fc 68%, #67e8f9 100%);
-  --grad-btn:linear-gradient(135deg, #fde047 0%, #fb7185 28%, #a855f7 65%, #38bdf8 100%);
-  --grad-btn-shadow:rgba(251,113,133,.45);
-  --grad-border:linear-gradient(135deg, rgba(253,224,71,.65) 0%, rgba(251,113,133,.6) 24%, rgba(192,132,252,.65) 48%, rgba(56,189,248,.6) 72%, rgba(52,211,153,.55) 100%);
-  --grad-progress:linear-gradient(90deg, #f59e0b 0%, #ec4899 22%, #a855f7 48%, #38bdf8 75%, #34d399 100%);
-  
-  --glow-1:rgba(251,113,133,.4);
-  --glow-2:rgba(168,85,247,.32);
-  --glow-3:rgba(245,158,11,.28);
-  
-  --amb-1:rgba(168,85,247,.22);
-  --amb-2:rgba(245,158,11,.2);
-  --amb-3:rgba(236,72,153,.18);
-  --amb-4:rgba(56,189,248,.18);
-  
-  --panel-bg:linear-gradient(160deg, rgba(10,32,44,.82), rgba(18,18,44,.76));
+html, body {
+  min-height: 100%;
+  width: 100%;
+  background: #f8fafc url('assets/images/h-bg.jpg') center center / cover no-repeat fixed;
+  font-family: var(--font-modern);
+  color: var(--c-text-main);
+  direction: rtl;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: default;
 }
 
-html,body{
-  height:100%;
-  width:100%;
-  overflow:hidden;
-  background:#020b10;
-  font-family:var(--font-modern);
-  color:var(--c-mint);
-  direction:rtl;
-  -webkit-font-smoothing:antialiased;
-}
-
-/* ================= الغلاف المحيط وتنسيق الجوال ================= */
-.app-wrapper{
-  position:relative;
-  width:100%;
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:
-    radial-gradient(1100px 750px at 15% 10%, var(--amb-1), transparent 65%),
-    radial-gradient(1000px 700px at 85% 15%, var(--amb-2), transparent 60%),
-    radial-gradient(950px 750px at 50% 90%, var(--amb-3), transparent 65%),
-    radial-gradient(850px 650px at 85% 85%, var(--amb-4), transparent 60%),
-    linear-gradient(180deg, var(--bg), #041720 45%, #081122 85%, var(--bg));
-}
-
-/* حاوية الجوال: شاشة كاملة على الهاتف، وإطار هاتف فخم على الحاسوب */
-.phone-frame{
-  position:relative;
-  width:100%;
-  height:100dvh;
-  max-width:100%;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  background:#000;
-  z-index:2;
-}
-
-/* على الشاشات الكبيرة (حاسوب محمول / لابتوب) يظهر كإطار هاتف فخم جداً */
-@media (min-width: 541px){
-  .phone-frame{
-    width:min(420px, 92vw);
-    height:min(92dvh, 860px);
-    border-radius:44px;
-    border:3px solid rgba(255,255,255,.2);
-    box-shadow:
-      0 35px 90px rgba(0,0,0,.85),
-      0 0 60px var(--glow-1),
-      0 0 100px var(--glow-2),
-      inset 0 0 0 1px rgba(255,255,255,.15);
+/* مؤشر الفراشة التفاعلي (Interactive Butterfly Cursor) */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none !important;
+  }
+  a, button, input, [role="button"], .clickable {
+    cursor: none !important;
   }
 }
 
-/* خلفيات المشاهد */
-.bg-layer{
-  position:absolute; inset:0; z-index:0;
-  background-size:cover; background-position:center; background-repeat:no-repeat;
-  opacity:0; transform:scale(1.06);
-  transition:opacity 1.1s ease;
-  will-change:opacity,transform;
+/* عنصر الفراشة التفاعلي الملاحق للمؤشر */
+.butterfly-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: transform 0.04s linear;
+  display: none;
+  filter: drop-shadow(0 2px 8px rgba(236, 72, 153, 0.55)) drop-shadow(0 0 10px rgba(56, 189, 248, 0.45));
 }
-.bg-layer.on{
-  opacity:1;
-  animation:slowZoom 28s ease-in-out infinite alternate;
-}
-@keyframes slowZoom{
-  from{transform:scale(1.05)}
-  to{transform:scale(1.15)}
-}
-
-.bg-overlay{
-  position:absolute; inset:0; z-index:1; pointer-events:none;
-  background:
-    radial-gradient(120% 90% at 50% 0%, var(--amb-4), transparent 60%),
-    radial-gradient(90% 60% at 15% 100%, var(--amb-1), transparent 65%),
-    radial-gradient(90% 60% at 85% 100%, var(--amb-2), transparent 65%),
-    radial-gradient(70% 50% at 50% 50%, var(--amb-3), transparent 70%),
-    linear-gradient(180deg, rgba(3,18,25,.86) 0%, rgba(5,28,38,.55) 42%, rgba(3,18,25,.94) 100%);
+@media (hover: hover) and (pointer: fine) {
+  .butterfly-follower {
+    display: block;
+  }
 }
 
-.vignette{
-  position:absolute; inset:0; z-index:1; pointer-events:none;
-  background:radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.65) 100%);
+.butterfly-follower svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.cursor-wing-left {
+  transform-box: fill-box;
+  transform-origin: right center;
+  animation: flapWingLeft 0.18s ease-in-out infinite alternate;
+}
+.cursor-wing-right {
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: flapWingRight 0.18s ease-in-out infinite alternate;
+}
+@keyframes flapWingLeft {
+  0%   { transform: scaleX(1); }
+  100% { transform: scaleX(0.28) rotate(-10deg); }
+}
+@keyframes flapWingRight {
+  0%   { transform: scaleX(1); }
+  100% { transform: scaleX(0.28) rotate(10deg); }
 }
 
-.grain{
-  position:absolute; inset:0; z-index:1; pointer-events:none;
-  opacity:.09; mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+/* غبار بريق الفراشة المتطاير خلف المؤشر */
+.fairy-sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  animation: sparkleFade 0.75s ease-out forwards;
+}
+@keyframes sparkleFade {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.95; }
+  100% { transform: translate(var(--dx), var(--dy)) scale(0.2); opacity: 0; }
 }
 
-/* البتلات والفراشات والاحتفالات */
-.petals, .butterflies, .celebrations{
-  position:absolute; inset:0; z-index:2; pointer-events:none; overflow:hidden;
+/* ================================================================
+   2. الخلفية المائية التفاعلية مع حركة المؤشر (Cursor-Reactive Background)
+   ================================================================ */
+.ambient-bg {
+  position: fixed;
+  inset: -50px;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 0.15s cubic-bezier(0.1, 0.9, 0.2, 1);
+  background: #f8fafc url('assets/images/h-bg.jpg') center center / cover no-repeat;
+  opacity: 0.95;
 }
 
-.petal{
-  position:absolute; top:-35px;
-  width:13px; height:13px;
-  border-radius:60% 10% 60% 10%;
-  opacity:.5;
-  animation:fall linear infinite;
-}
-@keyframes fall{
-  0%{transform:translate3d(0,-35px,0) rotate(0deg); opacity:0}
-  10%{opacity:.6}
-  100%{transform:translate3d(var(--drift, 30px), 105vh, 0) rotate(540deg); opacity:0}
+/* طبقة تساقط البتلات: ورد أحمر، ورد وردي، أزرق، وماس */
+.petals-canvas-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-.butterfly{
-  position:absolute;
-  width:32px; height:28px;
-  opacity:.85;
-  filter:drop-shadow(0 2px 6px var(--glow-1)) drop-shadow(0 0 10px var(--glow-2));
-  animation-timing-function:linear;
-  animation-iteration-count:infinite;
+.petal-drift {
+  position: absolute;
+  top: -30px;
+  border-radius: 65% 15% 65% 15%;
+  opacity: 0;
+  animation: fallAnimation linear infinite;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
 }
-.butterfly.ltr{ animation-name:flyLTR; }
-.butterfly.rtl{ animation-name:flyRTL; }
-.butterfly .inner{
-  width:100%; height:100%;
-  animation:bob 3.6s ease-in-out infinite alternate;
-}
-@keyframes bob{
-  0%{transform:translateY(-6px) rotate(-5deg)}
-  100%{transform:translateY(6px) rotate(5deg)}
-}
-@keyframes flyLTR{
-  0%{transform:translate(-50px, 0)}
-  100%{transform:translate(calc(100vw + 50px), 0)}
-}
-@keyframes flyRTL{
-  0%{transform:translate(calc(100vw + 50px), 0)}
-  100%{transform:translate(-50px, 0)}
-}
-.butterfly svg{width:100%; height:100%}
-.butterfly .wing{
-  transform-box:fill-box;
-  animation-duration:.16s;
-  animation-timing-function:ease-in-out;
-  animation-iteration-count:infinite;
-  animation-direction:alternate;
-}
-.butterfly .wing-left{transform-origin:right center; animation-name:flapLeft}
-.butterfly .wing-right{transform-origin:left center; animation-name:flapRight}
-@keyframes flapLeft{from{transform:scaleX(1)}to{transform:scaleX(.35)}}
-@keyframes flapRight{from{transform:scaleX(1)}to{transform:scaleX(.35)}}
-
-.celeb{
-  position:absolute; bottom:-50px;
-  font-size:16px; line-height:1; opacity:0;
-  animation:floatUp linear infinite;
-  text-shadow:0 0 8px currentColor;
-}
-@keyframes floatUp{
-  0%{transform:translateY(0) scale(.6); opacity:0}
-  10%{opacity:var(--op, .7)}
-  50%{transform:translateY(-50vh) translateX(var(--d1, 20px)) scale(1.05)}
-  90%{opacity:var(--op, .7)}
-  100%{transform:translateY(-105vh) translateX(var(--d2, -10px)) scale(.8); opacity:0}
+@keyframes fallAnimation {
+  0%   { transform: translate3d(0, -30px, 0) rotate(0deg) scale(0.7); opacity: 0; }
+  15%  { opacity: var(--max-op, 0.75); }
+  85%  { opacity: var(--max-op, 0.75); }
+  100% { transform: translate3d(var(--drift, 45px), 106vh, 0) rotate(540deg) scale(1); opacity: 0; }
 }
 
-/* ================= شريط قصص إنستغرام العلوي ================= */
-.story-header{
-  position:relative;
-  z-index:10;
-  padding:max(12px, env(safe-area-inset-top)) 16px 8px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  background:linear-gradient(180deg, rgba(2,11,16,.85) 0%, rgba(2,11,16,0) 100%);
-  pointer-events:none;
+.sparkle-twinkle {
+  position: absolute;
+  bottom: -20px;
+  pointer-events: none;
+  animation: sparkleRise linear infinite;
+  filter: drop-shadow(0 0 6px currentColor);
 }
-.story-header > *{pointer-events:auto}
-
-.story-bars{
-  display:flex;
-  align-items:center;
-  gap:5px;
-  width:100%;
-}
-.story-bar{
-  flex:1;
-  height:3px;
-  background:rgba(255,255,255,.2);
-  border-radius:99px;
-  overflow:hidden;
-  cursor:pointer;
-  transition:background .3s ease;
-}
-.story-bar-fill{
-  height:100%;
-  width:0;
-  background:var(--grad-btn);
-  border-radius:inherit;
-  box-shadow:0 0 10px var(--glow-1);
-  transition:width .4s ease;
-}
-.story-bar.passed .story-bar-fill{width:100%}
-.story-bar.active .story-bar-fill{width:100%; box-shadow:0 0 14px var(--glow-1), 0 0 20px var(--glow-2)}
-
-/* شريط التحكم العلوي: الصوت وشعار الزفاف */
-.top-controls{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+@keyframes sparkleRise {
+  0%   { transform: translateY(0) scale(0.5) rotate(0deg); opacity: 0; }
+  15%  { opacity: var(--op, 0.75); }
+  85%  { opacity: var(--op, 0.75); }
+  100% { transform: translateY(-108vh) rotate(180deg) scale(1.1); opacity: 0; }
 }
 
-.top-badge{
-  font-family:var(--font-calligraphy);
-  font-size:1.05rem;
-  font-weight:700;
-  color:#ffffff;
-  padding:4px 14px;
-  border-radius:999px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.14);
-  backdrop-filter:blur(10px);
-  text-shadow:0 0 12px var(--glow-1);
+/* ================================================================
+   3. مرحلة المغلف السري الملكي الكبير (The Big Mystery Envelope Stage)
+   ================================================================ */
+.mystery-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.65) 0%, rgba(241,245,249,0.85) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0.8s;
 }
 
-.audio-btn{
-  width:38px; height:38px; border-radius:50%;
-  display:grid; place-items:center;
-  background:rgba(10,32,44,.75);
-  border:1px solid rgba(255,255,255,.2);
-  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-  color:var(--c-gold); cursor:pointer;
-  box-shadow:0 4px 15px rgba(0,0,0,.35), 0 0 12px var(--glow-3);
-  transition:transform .25s ease, background .25s ease, border-color .25s ease;
-}
-.audio-btn:hover{transform:scale(1.08); border-color:rgba(255,255,255,.4)}
-.audio-btn svg{width:18px; height:18px}
-.audio-btn .ico-off{display:none}
-.audio-btn.muted .ico-on{display:none}
-.audio-btn.muted .ico-off{display:block}
-.audio-btn.muted{color:#94a3b8; border-color:rgba(255,255,255,.1)}
-.audio-btn.playing{
-  border-color:rgba(253,224,71,.5);
-  box-shadow:0 0 15px rgba(253,224,71,.35);
-  animation:pulseAudio 2.2s infinite ease-in-out;
-}
-@keyframes pulseAudio{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.08); box-shadow:0 0 20px var(--glow-1)}
+/* عندما يفتح المغلف */
+.mystery-stage.opened {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: scale(1.1) translateY(-30px);
 }
 
-/* ================= مسرح البطاقات (Stage & Steps) ================= */
-.stage{
-  position:relative;
-  flex:1;
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:5;
-  overflow:hidden;
-  touch-action:pan-y;
+.envelope-container {
+  position: relative;
+  width: min(380px, 92vw);
+  height: 250px;
+  perspective: 1200px;
+  cursor: pointer;
+  transition: transform 0.35s ease;
+  animation: envelopeBreathe 3.5s ease-in-out infinite alternate;
+}
+.envelope-container:hover {
+  transform: scale(1.03) translateY(-4px);
+}
+@keyframes envelopeBreathe {
+  0%   { transform: translateY(0) rotate(0deg); filter: drop-shadow(0 15px 35px rgba(217,119,6,0.18)); }
+  100% { transform: translateY(-8px) rotate(-0.5deg); filter: drop-shadow(0 25px 50px rgba(236,72,153,0.25)); }
 }
 
-.step{
-  position:absolute; inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 16px;
-  opacity:0;
-  transform:scale(.94) translateY(20px);
-  pointer-events:none;
-  transition:opacity .6s cubic-bezier(.2,.8,.2,1), transform .6s cubic-bezier(.2,.8,.2,1);
-}
-.step.active{
-  opacity:1;
-  transform:scale(1) translateY(0);
-  pointer-events:auto;
-}
-
-/* بطاقة الزجاج المخصصة للجوال */
-.panel{
-  position:relative;
-  width:100%;
-  max-width:390px;
-  max-height:calc(100dvh - 190px);
-  overflow-y:auto;
-  scrollbar-width:none;
-  border:1px solid transparent;
-  background:
-    var(--panel-bg) padding-box,
-    var(--grad-border) border-box;
-  border-radius:28px;
-  backdrop-filter:blur(22px) saturate(160%);
-  -webkit-backdrop-filter:blur(22px) saturate(160%);
+/* جسم المغلف الفاخر */
+.envelope-base {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #ffffff 0%, #fffbf2 50%, #fdf4ff 100%);
+  border-radius: 20px;
+  border: 2px solid rgba(253, 224, 71, 0.6);
   box-shadow:
-    0 24px 60px rgba(0,0,0,.6),
-    0 0 40px var(--glow-2),
-    inset 0 1px 0 rgba(255,255,255,.2);
-  padding:clamp(20px, 3.2vh, 32px) clamp(16px, 4vw, 24px);
-  text-align:center;
-}
-.panel::-webkit-scrollbar{display:none}
-
-.panel::before{
-  content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
-  background:
-    radial-gradient(500px 200px at 50% -15%, var(--amb-4), transparent 72%),
-    radial-gradient(350px 180px at 10% 115%, var(--amb-1), transparent 70%),
-    radial-gradient(350px 180px at 90% 115%, var(--amb-2), transparent 70%);
-}
-.panel > *{position:relative; z-index:1}
-
-.panel.ghost{
-  background:
-    linear-gradient(160deg, rgba(12,38,50,.48), rgba(20,16,44,.38)) padding-box,
-    var(--grad-border) border-box;
-  box-shadow:0 18px 50px rgba(0,0,0,.45), 0 0 35px var(--glow-1);
+    0 20px 45px rgba(0, 0, 0, 0.08),
+    0 0 25px rgba(244, 114, 182, 0.25),
+    0 0 25px rgba(56, 189, 248, 0.2);
+  overflow: hidden;
 }
 
-/* ================= الخطوط والعناصر النصية (Typography) ================= */
-.eyebrow{
-  font-family:var(--font-modern);
-  font-size:.78rem;
-  font-weight:700;
-  letter-spacing:.35em;
-  padding-right:.35em;
-  background:linear-gradient(90deg, var(--c-gold), var(--c-rose), var(--c-lav));
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-  margin-bottom:12px;
-  filter:drop-shadow(0 0 12px var(--glow-3));
+/* زوايا الورود الملونة على زوايا المغلف نفسه */
+.env-rose-tl {
+  position: absolute;
+  top: -8px; left: -8px;
+  width: 90px; height: 90px;
+  pointer-events: none;
+  z-index: 5;
+}
+.env-rose-tr {
+  position: absolute;
+  top: -8px; right: -8px;
+  width: 90px; height: 90px;
+  transform: scaleX(-1);
+  pointer-events: none;
+  z-index: 5;
 }
 
-.names{
-  font-family:var(--font-calligraphy);
-  font-weight:700;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:.2em;
-  font-size:clamp(3rem, 13vw, 4.4rem);
-  line-height:1.2;
-  background:var(--grad-names);
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-  filter:
-    drop-shadow(0 0 25px var(--glow-1))
-    drop-shadow(0 0 45px var(--glow-3));
-  animation:auroraShimmer 8s ease-in-out infinite alternate;
-  margin:4px 0 10px;
+/* بطانة المغلف وتفاصيله الهندسية */
+.envelope-pocket-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
 }
-@keyframes auroraShimmer{
-  0%{filter:drop-shadow(0 0 25px var(--glow-1)) drop-shadow(0 0 45px var(--glow-3))}
-  100%{filter:drop-shadow(0 0 25px var(--glow-2)) drop-shadow(0 0 45px var(--amb-4))}
+.pocket-fold-left {
+  position: absolute;
+  bottom: 0; left: 0; width: 0; height: 0;
+  border-style: solid;
+  border-width: 140px 0 0 190px;
+  border-color: transparent transparent transparent rgba(254, 240, 138, 0.35);
 }
-
-.names .amp{
-  font-size:.52em;
-  background:linear-gradient(135deg, var(--c-gold), var(--c-rose));
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-  opacity:.95; transform:translateY(-.06em);
+.pocket-fold-right {
+  position: absolute;
+  bottom: 0; right: 0; width: 0; height: 0;
+  border-style: solid;
+  border-width: 140px 190px 0 0;
+  border-color: transparent rgba(244, 114, 182, 0.25) transparent transparent;
 }
-
-.divider{
-  display:flex; align-items:center; justify-content:center; gap:10px;
-  margin:12px auto;
-}
-.divider i{display:block; height:1px; width:min(60px, 15vw)}
-.divider i:first-child{background:linear-gradient(90deg, transparent, var(--c-gold), var(--c-rose))}
-.divider i:last-child{background:linear-gradient(270deg, transparent, var(--c-gold), var(--c-rose))}
-.divider b{
-  width:8px; height:8px; transform:rotate(45deg); border-radius:1.5px;
-  background:linear-gradient(135deg, var(--c-gold), var(--c-rose), var(--c-violet));
-  box-shadow:0 0 12px var(--glow-1);
+.pocket-fold-bottom {
+  position: absolute;
+  bottom: 0; left: 0; right: 0; height: 0;
+  border-style: solid;
+  border-width: 0 190px 130px 190px;
+  border-color: transparent transparent rgba(255, 255, 255, 0.95) transparent;
+  filter: drop-shadow(0 -4px 10px rgba(0,0,0,0.04));
 }
 
-.tagline{
-  color:#e0f2fe;
-  font-size:.9rem;
-  font-weight:300;
-  line-height:1.6;
-  margin-bottom:16px;
+/* بطاقة داخل المغلف تبدو ظاهرة قليلاً */
+.envelope-letter-peek {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  right: 20px;
+  height: 140px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.letter-peek-title {
+  font-family: var(--font-calligraphy);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--c-gold-solid);
+  margin-bottom: 2px;
+}
+.letter-peek-sub {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 500;
 }
 
-.sec-title{
-  font-family:var(--font-calligraphy);
-  font-weight:700;
-  font-size:clamp(1.8rem, 7.5vw, 2.4rem);
-  color:#ffffff;
-  margin-bottom:4px;
-  text-shadow:0 0 24px var(--glow-1), 0 0 40px var(--glow-2);
+/* غطاء المغلف العلوي القابل للفتح بتقنية 3D */
+.envelope-flap {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 135px;
+  transform-origin: top center;
+  z-index: 6;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.sec-sub{
-  font-family:var(--font-modern);
-  color:var(--c-muted);
-  font-size:.8rem;
-  font-weight:300;
-  margin-bottom:18px;
+.flap-triangle {
+  width: 0; height: 0;
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 135px 190px 0 190px;
+  border-color: rgba(255, 253, 245, 0.98) transparent transparent transparent;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.09));
 }
-
-.hosts{
-  display:flex; flex-direction:column; gap:10px;
-  margin-bottom:14px;
+.mystery-stage.opening .envelope-flap {
+  transform: rotateX(180deg);
 }
-.host{padding:4px 0}
-.host .role{
-  font-size:.72rem; letter-spacing:.18em;
-  font-weight:700; margin-bottom:4px;
-}
-.host:first-child .role{color:var(--c-gold); text-shadow:0 0 12px var(--glow-3)}
-.host:last-child .role{color:var(--c-rose); text-shadow:0 0 12px var(--glow-1)}
-.host .name{
-  font-family:var(--font-classical);
-  font-size:clamp(1.15rem, 4.8vw, 1.35rem);
-  font-weight:700; color:#f8fafc;
-}
-.host .kunya{font-size:.8rem; font-weight:400; margin-top:2px}
-.host:first-child .kunya{color:var(--c-cyan)}
-.host:last-child .kunya{color:var(--c-lav)}
-.host-sep{
-  font-family:var(--font-calligraphy);
-  font-size:1.4rem; font-weight:700;
-  background:linear-gradient(180deg, var(--c-gold), var(--c-rose));
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-  line-height:1;
+.mystery-stage.opening .envelope-letter-peek {
+  transform: translateY(-70px);
 }
 
-.invite-text{
-  font-size:.85rem; font-weight:300; color:#e2e8f0;
-  line-height:1.8; margin:8px auto;
-}
-
-.couple-line{
-  font-family:var(--font-calligraphy);
-  font-weight:700;
-  font-size:clamp(1.8rem, 7.5vw, 2.3rem);
-  background:var(--grad-couple);
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-  filter:drop-shadow(0 0 20px var(--glow-3));
-  margin-top:6px;
-}
-
-/* الموعد والعداد */
-.date-day{
-  font-family:var(--font-calligraphy);
-  font-weight:700;
-  font-size:clamp(1.4rem, 5.8vw, 1.85rem);
-  color:#ffffff; line-height:1.4; margin-bottom:6px;
-}
-.date-time{
-  font-size:.84rem; color:#e2e8f0; font-weight:300;
-  margin-bottom:16px;
-}
-.date-time b{
-  background:linear-gradient(90deg, var(--c-gold), var(--c-amber));
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-  font-weight:700;
-}
-
-.countdown{
-  display:grid; grid-template-columns:repeat(4,1fr);
-  gap:8px; margin-bottom:16px;
-}
-.cd-box{
-  border-radius:16px;
-  padding:10px 4px;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.15), 0 8px 20px rgba(0,0,0,.35);
-}
-.cd-box:nth-child(1){
-  background:linear-gradient(165deg, rgba(245,158,11,.22), rgba(254,240,138,.06));
-  border:1px solid rgba(253,224,71,.4);
-}
-.cd-box:nth-child(1) .cd-num{color:#fef08a; text-shadow:0 0 20px rgba(245,158,11,.65)}
-.cd-box:nth-child(2){
-  background:linear-gradient(165deg, rgba(236,72,153,.22), rgba(251,113,133,.06));
-  border:1px solid rgba(251,113,133,.4);
-}
-.cd-box:nth-child(2) .cd-num{color:#fbcfe8; text-shadow:0 0 20px rgba(236,72,153,.65)}
-.cd-box:nth-child(3){
-  background:linear-gradient(165deg, rgba(168,85,247,.22), rgba(192,132,252,.06));
-  border:1px solid rgba(192,132,252,.4);
-}
-.cd-box:nth-child(3) .cd-num{color:#e9d5ff; text-shadow:0 0 20px rgba(168,85,247,.65)}
-.cd-box:nth-child(4){
-  background:linear-gradient(165deg, rgba(16,185,129,.22), rgba(110,231,183,.06));
-  border:1px solid rgba(52,211,153,.4);
-}
-.cd-box:nth-child(4) .cd-num{color:#a7f3d0; text-shadow:0 0 20px rgba(16,185,129,.65)}
-
-.cd-num{
-  font-family:var(--font-modern);
-  font-weight:700;
-  font-size:clamp(1.4rem, 6vw, 1.9rem);
-  line-height:1.1;
-  font-variant-numeric:tabular-nums;
-}
-.cd-label{
-  font-size:.68rem; color:var(--c-muted); font-weight:400; margin-top:4px;
-}
-
-/* الموقع */
-.venue-name{
-  font-family:var(--font-calligraphy);
-  font-weight:700;
-  font-size:clamp(1.7rem, 6.8vw, 2.2rem);
-  background:linear-gradient(135deg, #ffffff 0%, var(--c-gold) 50%, var(--c-rose) 100%);
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-  margin-bottom:10px;
-}
-.venue-addr{
-  font-size:.85rem; color:#e2e8f0; font-weight:300; line-height:1.9;
-  margin-bottom:18px;
-}
-
-/* الملاحظات */
-.notes{display:grid; gap:10px; text-align:right}
-.note{
-  display:flex; align-items:center; gap:12px;
-  padding:12px 14px; border-radius:16px;
-  background:linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
-  border:1px solid rgba(255,255,255,.12);
-}
-.note-icon{
-  flex:none; width:36px; height:36px; border-radius:50%;
-  display:grid; place-items:center;
-}
-.note:nth-child(1) .note-icon{
-  background:radial-gradient(circle at 30% 25%, rgba(52,211,153,.4), rgba(56,189,248,.15));
-  border:1px solid rgba(52,211,153,.45); color:#a7f3d0;
-}
-.note:nth-child(2) .note-icon{
-  background:radial-gradient(circle at 30% 25%, rgba(251,113,133,.4), rgba(245,158,11,.15));
-  border:1px solid rgba(251,113,133,.45); color:#fbcfe8;
-}
-.note:nth-child(3) .note-icon{
-  background:radial-gradient(circle at 30% 25%, rgba(192,132,252,.4), rgba(124,58,237,.15));
-  border:1px solid rgba(192,132,252,.45); color:#e9d5ff;
-}
-.note-icon svg{width:16px; height:16px}
-.note p{font-size:.82rem; color:#f1f5f9; font-weight:300}
-
-/* الختام */
-.dua{
-  font-family:var(--font-calligraphy);
-  font-weight:700;
-  font-size:clamp(1.25rem, 5.2vw, 1.6rem);
-  color:#f8fafc; line-height:1.9;
-  margin:10px auto;
-}
-.footer-small{
-  font-size:.7rem; letter-spacing:.18em;
-  color:var(--c-muted); font-weight:300; margin-top:14px;
-}
-
-/* ================= أزرار الإجراءات السريعة للجوال ================= */
-.action-pill{
-  display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  width:100%;
-  padding:.78em 1.2em; border-radius:14px; border:none; cursor:pointer;
-  font-family:var(--font-modern); font-weight:600; font-size:.82rem;
-  text-decoration:none; color:#ffffff;
-  background:rgba(255,255,255,.09);
-  border:1px solid rgba(255,255,255,.2);
-  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
-  box-shadow:0 6px 18px rgba(0,0,0,.25);
-  transition:transform .25s ease, background .25s ease, border-color .25s ease;
-  margin-top:6px;
-}
-.action-pill:hover, .action-pill:active{
-  transform:scale(.98);
-  background:rgba(255,255,255,.16);
-  border-color:rgba(255,255,255,.35);
-}
-.action-pill svg{width:16px; height:16px; flex:none}
-
-.cal-pill{border-color:rgba(253,224,71,.4); color:#fef08a}
-.map-pill{border-color:rgba(56,189,248,.4); color:#bae6fd}
-.rsvp-pill{border-color:rgba(52,211,153,.4); color:#a7f3d0}
-.share-pill{border-color:rgba(251,113,133,.4); color:#fbcfe8}
-
-/* ================= شريط الإبهام السفلي للجوال ================= */
-.thumb-bar{
-  position:relative;
-  z-index:10;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 16px max(16px, env(safe-area-inset-bottom));
-  background:linear-gradient(180deg, rgba(2,11,16,0) 0%, rgba(2,11,16,.85) 45%, rgba(2,11,16,.98) 100%);
-  pointer-events:none;
-}
-.thumb-bar > *{pointer-events:auto}
-
-.nav-arrow{
-  flex:none;
-  width:46px; height:46px; border-radius:50%;
-  display:grid; place-items:center;
-  background:rgba(12,35,46,.75);
-  border:1px solid rgba(255,255,255,.2);
-  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-  color:#ffffff; cursor:pointer;
-  transition:transform .25s ease, background .25s ease;
-  box-shadow:0 8px 20px rgba(0,0,0,.4);
-}
-.nav-arrow:hover{transform:scale(1.08); background:rgba(18,48,64,.9)}
-.nav-arrow:active{transform:scale(.94)}
-.nav-arrow[hidden]{display:none}
-.nav-arrow svg{width:20px; height:20px}
-
-.main-btn{
-  flex:1;
-  display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  height:48px; border-radius:999px; border:none; cursor:pointer;
-  font-family:var(--font-modern); font-weight:700; font-size:.9rem;
-  color:#0f051d; text-decoration:none;
-  background:var(--grad-btn);
+/* ختم الشمع الذهبي الملكي البارز في المنتصف (Royal Wax Seal) */
+.wax-seal-btn {
+  position: absolute;
+  top: 105px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fef08a 0%, #f59e0b 45%, #b45309 85%, #78350f 100%);
   box-shadow:
-    0 10px 30px var(--grad-btn-shadow),
-    0 4px 15px var(--glow-2),
-    inset 0 1px 0 rgba(255,255,255,.5);
-  transition:transform .25s ease, box-shadow .25s ease;
+    0 8px 24px rgba(180, 83, 9, 0.5),
+    0 0 20px rgba(253, 224, 71, 0.75),
+    inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 3px solid rgba(255, 255, 255, 0.75);
+  animation: sealPulseGlow 2.4s infinite ease-in-out;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.main-btn:hover{
-  transform:scale(1.02);
-  box-shadow:
-    0 14px 40px var(--grad-btn-shadow),
-    0 6px 20px var(--glow-2),
-    inset 0 1px 0 rgba(255,255,255,.6);
+.wax-seal-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
 }
-.main-btn:active{transform:scale(.97)}
-.main-btn svg{width:18px; height:18px; flex:none}
-
-.swipe-hint{
-  font-size:.7rem; color:var(--c-muted); opacity:.7; margin-top:8px;
-  display:flex; align-items:center; justify-content:center; gap:4px;
-}
-
-/* ================= يوتيوب مخفي ================= */
-#ytHost{
-  position:fixed; top:-100px; left:-100px;
-  width:1px; height:1px; overflow:hidden;
-  opacity:.01; pointer-events:none; z-index:-1;
+@keyframes sealPulseGlow {
+  0%, 100% { box-shadow: 0 8px 24px rgba(180, 83, 9, 0.5), 0 0 18px rgba(253, 224, 71, 0.6); }
+  50%      { box-shadow: 0 12px 32px rgba(236, 72, 153, 0.6), 0 0 30px rgba(253, 224, 71, 0.95); transform: translate(-50%, -50%) scale(1.05); }
 }
 
-@media (prefers-reduced-motion: reduce){
-  *{animation:none !important; transition-duration:.01ms !important}
-  .petal, .butterfly, .celeb{display:none}
+.wax-seal-icon {
+  width: 44px;
+  height: 44px;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+}
+
+/* نصوص التوجيه أسفل المغلف */
+.envelope-prompt-text {
+  margin-top: 28px;
+  text-align: center;
+  animation: promptFade 2.2s infinite ease-in-out alternate;
+}
+@keyframes promptFade {
+  0%   { transform: translateY(0); opacity: 0.85; }
+  100% { transform: translateY(-4px); opacity: 1; }
+}
+.prompt-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  box-shadow: 0 8px 25px rgba(217, 119, 6, 0.15), 0 0 15px rgba(244, 114, 182, 0.2);
+  font-family: var(--font-modern);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--c-gold-solid);
+}
+.prompt-sub {
+  font-size: 0.76rem;
+  color: var(--c-text-muted);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* ================================================================
+   4. الغلاف المخصص للجوال فقط (Mobile-First Card View)
+   ================================================================ */
+.mobile-wrapper {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s;
+}
+
+/* عندما يفتح المغلف تظهر البطاقة بكامل أناقتها */
+body.invitation-open .mobile-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* بطاقة الجوال البيضاء الفاخرة الملونة بأطراف الورود مع خلفية v-bg.jpg */
+.mobile-invitation-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  min-height: 100dvh;
+  background: #ffffff url('assets/images/v-bg.jpg') center top / cover no-repeat;
+  padding: 30px 20px 42px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+}
+
+/* إخفاء الهالات والزخارف المتجهة لأن خلفية v-bg.jpg تحتوي على إطار الورد الخاص بها */
+.card-color-auras,
+.floral-corner-svg,
+.side-rose-accent {
+  display: none !important;
+}
+
+@media (min-width: 480px) {
+  .mobile-wrapper {
+    padding: 24px 12px;
+  }
+  .mobile-invitation-card {
+    min-height: auto;
+    border-radius: 38px;
+    border: 1.5px solid rgba(226, 232, 240, 0.95);
+    box-shadow:
+      0 30px 80px rgba(0, 0, 0, 0.1),
+      0 12px 35px rgba(244, 114, 182, 0.2),
+      0 12px 35px rgba(56, 189, 248, 0.2);
+  }
+}
+
+/* ================================================================
+   6. التاج الملكي وحمامتي السلام (صورة crown.png)
+   ================================================================ */
+.emblem-section {
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 10;
+}
+.crown-img {
+  width: clamp(140px, 42vw, 195px);
+  height: auto;
+  display: block;
+  margin: 0 auto 6px;
+  filter: drop-shadow(0 6px 16px rgba(217, 119, 6, 0.35)) drop-shadow(0 2px 8px rgba(0,0,0,0.12));
+  animation: emblemFloat 4s ease-in-out infinite alternate;
+  object-fit: contain;
+  pointer-events: none;
+}
+@keyframes emblemFloat {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+.dove-wing-left {
+  transform-box: fill-box;
+  transform-origin: right bottom;
+  animation: wingBeatLeft 3s ease-in-out infinite alternate;
+}
+.dove-wing-right {
+  transform-box: fill-box;
+  transform-origin: left bottom;
+  animation: wingBeatRight 3s ease-in-out infinite alternate;
+}
+@keyframes wingBeatLeft {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(-5deg) scaleY(0.96); }
+}
+@keyframes wingBeatRight {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(5deg) scaleY(0.96); }
+}
+
+/* ================================================================
+   7. النصوص والآية الكريمة وأسماء الآباء
+   ================================================================ */
+.bismillah-title {
+  font-family: var(--font-calligraphy);
+  font-size: clamp(1.45rem, 5.2vw, 1.85rem);
+  font-weight: 700;
+  text-align: center;
+  background: var(--c-gold-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 2px rgba(180, 83, 9, 0.2));
+  margin: 2px 0 6px;
+}
+
+.ayah-box {
+  position: relative;
+  text-align: center;
+  padding: 4px 8px;
+  margin-bottom: 10px;
+  z-index: 10;
+}
+.ayah-content {
+  font-family: var(--font-quran);
+  font-size: clamp(0.96rem, 3.4vw, 1.15rem);
+  line-height: 2.05;
+  color: #1e293b;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.ayah-bracket {
+  color: var(--c-gold-warm);
+  font-size: 1.25em;
+  padding: 0 4px;
+}
+
+.invite-heading {
+  text-align: center;
+  font-family: var(--font-calligraphy);
+  font-size: clamp(1.45rem, 5vw, 1.85rem);
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+.parents-names-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+  margin: 4px auto 6px;
+  text-align: center;
+  z-index: 10;
+}
+.parent-name {
+  font-family: var(--font-calligraphy);
+  font-size: clamp(1.22rem, 4.4vw, 1.55rem);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* حرف الواو المميز بلون خاص ومشع كما طلب المستخدم بدقة */
+.distinct-waw {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-calligraphy);
+  font-size: clamp(1.75rem, 6.2vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1;
+  padding: 0 8px;
+  margin: -2px 0;
+  background: linear-gradient(135deg, #e11d48 0%, #db2777 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(225, 29, 72, 0.45));
+  animation: wawPulse 3s infinite ease-in-out alternate;
+}
+@keyframes wawPulse {
+  0%   { transform: scale(1); filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.35)); }
+  100% { transform: scale(1.15); filter: drop-shadow(0 0 16px rgba(219, 39, 119, 0.65)); }
+}
+
+.contract-subtitle {
+  text-align: center;
+  font-family: var(--font-modern);
+  font-size: clamp(0.98rem, 3.4vw, 1.15rem);
+  font-weight: 600;
+  color: #475569;
+  margin: 4px auto 8px;
+  letter-spacing: 0.04em;
+}
+
+/* فاصل خطي مذهب مع قلب */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 88%;
+  margin: 6px auto;
+}
+.gold-divider .divider-line {
+  flex: 1;
+  height: 1.5px;
+  background: var(--c-gold-line);
+}
+.gold-divider .divider-heart {
+  color: var(--c-gold-warm);
+  font-size: 1.1rem;
+  line-height: 1;
+  filter: drop-shadow(0 1px 2px rgba(217, 119, 6, 0.25));
+}
+
+/* ================================================================
+   8. أسماء العروسين بالخط الذهبي الفخم ورأس القلب الأحمر النابض
+   ================================================================ */
+.couple-block {
+  text-align: center;
+  margin: 6px auto 10px;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.couple-names-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.couple-item {
+  font-family: var(--font-calligraphy);
+  font-size: clamp(2.25rem, 8vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.65;
+  padding: 8px 18px;
+  margin: 4px 0;
+  display: inline-block;
+  background: var(--c-gold-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(180, 83, 9, 0.28));
+  transition: transform 0.25s ease;
+}
+.groom-name-highlight {
+  line-height: 2.1;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.couple-block:hover .couple-item {
+  transform: scale(1.02);
+}
+
+/* رمز رأس القلب الأحمر النابض بين الاسمين (كما طُلب بالحرف) */
+.red-heart-ruby {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2px 0;
+  animation: rubyHeartbeat 1.45s infinite ease-in-out;
+  cursor: pointer;
+}
+.red-heart-ruby svg {
+  width: 44px;
+  height: 44px;
+  filter: drop-shadow(0 0 12px rgba(239, 68, 68, 0.8)) drop-shadow(0 2px 6px rgba(185, 28, 28, 0.4));
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.red-heart-ruby:active svg {
+  transform: scale(1.35);
+}
+@keyframes rubyHeartbeat {
+  0%   { transform: scale(1); }
+  14%  { transform: scale(1.22); }
+  28%  { transform: scale(1); }
+  42%  { transform: scale(1.26); }
+  70%  { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+.tap-hint {
+  font-size: 0.72rem;
+  color: var(--c-text-muted);
+  opacity: 0.8;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+/* ================================================================
+   9. الموعد والعداد التنازلي الباستيل الملون
+   ================================================================ */
+.date-highlight {
+  text-align: center;
+  font-family: var(--font-calligraphy);
+  font-size: clamp(1.18rem, 4.4vw, 1.48rem);
+  font-weight: 700;
+  color: #1e293b;
+  margin: 8px auto 3px;
+}
+
+.time-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-modern);
+  font-size: clamp(0.82rem, 3vw, 0.96rem);
+  font-weight: 600;
+  color: #0f172a;
+  background: linear-gradient(135deg, rgba(254, 240, 138, 0.35) 0%, rgba(253, 230, 138, 0.45) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  padding: 5px 16px;
+  border-radius: 999px;
+  margin: 2px auto 10px;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.08);
+}
+
+.countdown-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 380px;
+  margin: 6px auto 12px;
+  z-index: 10;
+}
+.cd-cell {
+  padding: 8px 3px;
+  border-radius: 16px;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  border: 1px solid transparent;
+  transition: transform 0.25s ease;
+}
+.cd-cell:hover { transform: translateY(-2px); }
+.cd-cell.c-days  { border-color: rgba(56, 189, 248, 0.45); background: linear-gradient(165deg, #fff 0%, rgba(224, 242, 254, 0.5) 100%); }
+.cd-cell.c-days .val { color: #0284c7; }
+.cd-cell.c-hours { border-color: rgba(244, 114, 182, 0.45); background: linear-gradient(165deg, #fff 0%, rgba(252, 231, 243, 0.5) 100%); }
+.cd-cell.c-hours .val { color: #db2777; }
+.cd-cell.c-mins  { border-color: rgba(192, 132, 252, 0.45); background: linear-gradient(165deg, #fff 0%, rgba(243, 232, 255, 0.5) 100%); }
+.cd-cell.c-mins .val { color: #9333ea; }
+.cd-cell.c-secs  { border-color: rgba(251, 146, 60, 0.45); background: linear-gradient(165deg, #fff 0%, rgba(254, 243, 199, 0.5) 100%); }
+.cd-cell.c-secs .val { color: #ea580c; }
+
+.cd-cell .val {
+  font-family: var(--font-modern);
+  font-size: clamp(1.2rem, 4.4vw, 1.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.cd-cell .lbl {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--c-text-muted);
+  margin-top: 2px;
+}
+
+/* ================================================================
+   10. الدعاء المبارك وأزرار الإجراءات (تم حذف زر واتساب للمباركة)
+   ================================================================ */
+.dua-section {
+  text-align: center;
+  margin: 6px auto 14px;
+  z-index: 10;
+}
+.dua-script {
+  font-family: var(--font-calligraphy);
+  font-size: clamp(1.22rem, 4.5vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.85;
+  background: var(--c-gold-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 2px rgba(180, 83, 9, 0.2));
+}
+
+.action-buttons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 360px;
+  margin: 8px auto 4px;
+  z-index: 10;
+}
+
+.btn-action-mobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-family: var(--font-modern);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+.btn-action-mobile:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+.btn-action-mobile:active {
+  transform: translateY(1px) scale(0.98);
+}
+.btn-action-mobile svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.btn-cal  { background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35); }
+.btn-share{ background: linear-gradient(135deg, #db2777 0%, #f472b6 100%); box-shadow: 0 4px 15px rgba(244, 114, 182, 0.35); }
+
+/* طبقة انفجار القلوب والنجوم التفاعلية عند النقر */
+.heart-burst-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  overflow: hidden;
+}
+.burst-item {
+  position: absolute;
+  pointer-events: none;
+  animation: burstFly 1.5s cubic-bezier(0.12, 0.8, 0.32, 1) forwards;
+  will-change: transform, opacity;
+}
+@keyframes burstFly {
+  0% {
+    transform: translate(0, 0) scale(0.6) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(1.35) rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+/* إمكانية الوصول */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .petal-drift, .sparkle-twinkle, .burst-item, .butterfly-follower { display: none !important; }
 }
 </style>
 </head>
 <body>
 
-<div class="app-wrapper">
-  
-  <div class="phone-frame" id="phoneFrame">
+<!-- مؤشر الفراشة التفاعلي اللطيف الملاحق للفأرة -->
+<div class="butterfly-follower" id="butterflyCursor" aria-hidden="true">
+  <svg viewBox="0 0 40 32" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="cursorWingGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#f472b6"/>
+        <stop offset="50%" stop-color="#38bdf8"/>
+        <stop offset="100%" stop-color="#fde047"/>
+      </linearGradient>
+    </defs>
+    <g class="cursor-wing-left">
+      <ellipse cx="12" cy="10" rx="10" ry="9" fill="url(#cursorWingGrad)" opacity="0.9"/>
+      <ellipse cx="10" cy="22" rx="7" ry="6" fill="#ec4899" opacity="0.8"/>
+      <circle cx="12" cy="10" r="3" fill="#ffffff" opacity="0.6"/>
+    </g>
+    <g class="cursor-wing-right">
+      <ellipse cx="28" cy="10" rx="10" ry="9" fill="url(#cursorWingGrad)" opacity="0.9"/>
+      <ellipse cx="30" cy="22" rx="7" ry="6" fill="#38bdf8" opacity="0.8"/>
+      <circle cx="28" cy="10" r="3" fill="#ffffff" opacity="0.6"/>
+    </g>
+    <!-- جسم الفراشة ورأسها -->
+    <ellipse cx="20" cy="16" rx="1.8" ry="10" fill="#4a0e4e"/>
+    <circle cx="20" cy="5" r="1.8" fill="#4a0e4e"/>
+    <path d="M20 5 Q16 1 13 2" stroke="#4a0e4e" stroke-width="0.8" fill="none"/>
+    <path d="M20 5 Q24 1 27 2" stroke="#4a0e4e" stroke-width="0.8" fill="none"/>
+  </svg>
+</div>
 
-    <!-- خلفيات المشاهد (محفوظة محلياً) -->
-    <div class="bg-layer on" id="bg1"></div>
-    <div class="bg-layer" id="bg2"></div>
-    <div class="bg-overlay"></div>
-    <div class="vignette"></div>
-    <div class="grain"></div>
+<!-- الخلفية المائية التفاعلية مع حركة الفأرة (Parallax on Move) -->
+<div class="ambient-bg" id="ambientBg" aria-hidden="true"></div>
 
-    <!-- تأثيرات بصرية متحركة -->
-    <div class="petals" id="petals" aria-hidden="true"></div>
-    <div class="butterflies" id="butterflies" aria-hidden="true"></div>
-    <div class="celebrations" id="celebrations" aria-hidden="true"></div>
+<!-- طبقة تساقط البتلات المتلألئة -->
+<div class="petals-canvas-layer" id="petalsLayer" aria-hidden="true"></div>
 
-    <!-- شريط قصص إنستغرام العلوي للتحكم والمتابعة -->
-    <header class="story-header">
-      <div class="story-bars" id="storyBars">
-        <div class="story-bar active" data-step="0"><div class="story-bar-fill"></div></div>
-        <div class="story-bar" data-step="1"><div class="story-bar-fill"></div></div>
-        <div class="story-bar" data-step="2"><div class="story-bar-fill"></div></div>
-        <div class="story-bar" data-step="3"><div class="story-bar-fill"></div></div>
-        <div class="story-bar" data-step="4"><div class="story-bar-fill"></div></div>
-        <div class="story-bar" data-step="5"><div class="story-bar-fill"></div></div>
+<!-- طبقة انفجار القلوب والنجوم التفاعلية عند النقر -->
+<div class="heart-burst-container" id="heartBurstLayer" aria-hidden="true"></div>
+
+<!-- عنصر الصوت للموسيقى الملكية (بدون أي أزرار إيقاف) -->
+<audio id="royalWeddingAudio" src="assets/audio/royal.mp3" loop preload="auto" playsinline webkit-playsinline></audio>
+
+<!-- ================================================================
+     المغلف السري الملكي الكبير (The Mystery Envelope)
+     ================================================================ -->
+<div class="mystery-stage" id="mysteryStage">
+
+  <div class="envelope-container" id="envelopeBox" title="انقر لفتح المغلف وسماع الموسيقى الملكية">
+
+    <!-- جسم المغلف الفاخر -->
+    <div class="envelope-base">
+
+      <!-- زخارف الورد المتجهة على زوايا المغلف -->
+      <svg class="env-rose-tl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="35" cy="35" r="22" fill="#ef4444"/>
+        <circle cx="35" cy="35" r="9" fill="#991b1b"/>
+        <circle cx="68" cy="25" r="14" fill="#f472b6"/>
+        <circle cx="25" cy="68" r="13" fill="#38bdf8"/>
+        <polygon points="15,8 20,15 15,22 10,15" fill="#ffffff"/>
+      </svg>
+      <svg class="env-rose-tr" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="35" cy="35" r="22" fill="#ef4444"/>
+        <circle cx="35" cy="35" r="9" fill="#991b1b"/>
+        <circle cx="68" cy="25" r="14" fill="#f472b6"/>
+        <circle cx="25" cy="68" r="13" fill="#38bdf8"/>
+      </svg>
+
+      <!-- خطوط وثنايا المغلف الملكي -->
+      <div class="envelope-pocket-lines">
+        <div class="pocket-fold-left"></div>
+        <div class="pocket-fold-right"></div>
+        <div class="pocket-fold-bottom"></div>
       </div>
 
-      <div class="top-controls">
-        <!-- زر الصوت للموسيقى في الخلفية -->
-        <button id="audioToggle" class="audio-btn muted" aria-label="تشغيل الموسيقى" title="تشغيل الموسيقى">
-          <svg class="ico-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M11 5 6 9H2v6h4l5 4z"/>
-            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-          </svg>
-          <svg class="ico-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M11 5 6 9H2v6h4l5 4z"/>
-            <line x1="22" y1="9" x2="16" y2="15"/>
-            <line x1="16" y1="9" x2="22" y2="15"/>
-          </svg>
-        </button>
-
-        <!-- وسم شرف الدعوة العلوي المتناسق -->
-        <div class="top-badge">
-          <span>✨ طارق &amp; جنين</span>
-        </div>
+      <!-- بطاقة داخلية تبدو ظاهرة قليلاً داخل المغلف -->
+      <div class="envelope-letter-peek">
+        <p class="letter-peek-title">عَقْدُ قِرَانٍ مُبَارَك</p>
+        <p class="letter-peek-sub">المهندس إبراهيم ❤️ المهندسة رزان</p>
       </div>
-    </header>
 
-    <!-- المسرح والبطاقات (قابل للسحب والإيماءات) -->
-    <main class="stage" id="stage">
+      <!-- غطاء المغلف العلوي المتحرك ثلاثي الأبعاد -->
+      <div class="envelope-flap" id="envelopeFlap">
+        <div class="flap-triangle"></div>
+      </div>
 
-      <!-- ① الغلاف -->
-      <section class="step active" data-bg="assets/images/bg-1.jpg" data-step="0">
-        <div class="panel ghost">
-          <p class="eyebrow">دعوة زفاف</p>
-          <h1 class="names">
-            <span>طارق</span><span class="amp">&amp;</span><span>جنين</span>
-          </h1>
-          <div class="divider"><i></i><b></b><i></i></div>
-          <p class="tagline">بكل الحب والود ندعوكم لمشاركتنا فرحتنا الكبرى</p>
-          <div class="swipe-hint">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-            <span>اسحب للتنقل أو اضغط متابعة</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- ② يتشرف -->
-      <section class="step" data-bg="assets/images/bg-2.jpg" data-step="1">
-        <div class="panel">
-          <h2 class="sec-title">يتشرّف</h2>
-          <p class="sec-sub">بدعوتكم لحضور حفل زفاف نجليهما</p>
-
-          <div class="hosts">
-            <div class="host">
-              <p class="role">والد العريس</p>
-              <p class="name">السيد سعود محمود عطاالله</p>
-              <p class="kunya">أبو طارق</p>
-            </div>
-            <div class="host-sep">و</div>
-            <div class="host">
-              <p class="role">والد العروسة</p>
-              <p class="name">السيد باسم أحمد أبو عتيلة</p>
-              <p class="kunya">أبو زهير</p>
-            </div>
-          </div>
-
-          <p class="invite-text">
-            وعائلتهما الكريمتان يتشرّفان بدعوتكم<br>
-            لمشاركتهما فرحة العمر وجميل اللحظات
-          </p>
-
-          <div class="divider"><i></i><b></b><i></i></div>
-          <p class="couple-line">طارق &amp; جنين</p>
-        </div>
-      </section>
-
-      <!-- ③ الموعد -->
-      <section class="step" data-bg="assets/images/bg-3.jpg" data-step="2">
-        <div class="panel">
-          <h2 class="sec-title">الموعد</h2>
-          <p class="sec-sub">ونحن في انتظار تشريفكم الكريم</p>
-
-          <p class="date-day">يوم الخميس ١٢ نوفمبر ٢٠٢٦</p>
-          <p class="date-time">الساعة <b>٤:٠٠ مساءً</b> — توقيت غزة · فلسطين</p>
-
-          <div class="countdown" id="countdown">
-            <div class="cd-box"><div class="cd-num" id="cd-d">00</div><div class="cd-label">يوم</div></div>
-            <div class="cd-box"><div class="cd-num" id="cd-h">00</div><div class="cd-label">ساعة</div></div>
-            <div class="cd-box"><div class="cd-num" id="cd-m">00</div><div class="cd-label">دقيقة</div></div>
-            <div class="cd-box"><div class="cd-num" id="cd-s">00</div><div class="cd-label">ثانية</div></div>
-          </div>
-
-          <!-- زر حفظ في التقويم المخصص للجوال -->
-          <button class="action-pill cal-pill" id="addToCalBtn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
-            <span>أضف الموعد إلى تقويم هاتفك</span>
-          </button>
-        </div>
-      </section>
-
-      <!-- ④ الموقع -->
-      <section class="step" data-bg="assets/images/bg-4.jpg" data-step="3">
-        <div class="panel">
-          <h2 class="sec-title">وجهتنا</h2>
-          <p class="sec-sub">الموقع وقاعة الحفل</p>
-
-          <p class="venue-name">صالة لافندر</p>
-          <p class="venue-addr">
-            شارع النصر — غرب صيدلية مسلم<br>
-            بجوار مغسلة أبو دية
-          </p>
-
-          <a class="action-pill map-pill"
-             href="https://www.google.com/maps/search/?api=1&amp;query=%D8%B5%D8%A7%D9%84%D8%A9%20%D9%84%D8%A7%D9%81%D9%86%D8%AF%D8%B1%20%D8%B4%D8%A7%D8%B1%D8%B9%20%D8%A7%D9%84%D9%86%D8%B5%D8%B1%20%D8%BA%D8%B2%D8%A9"
-             target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-            </svg>
-            <span>فتح الموقع في خرائط Google</span>
-          </a>
-        </div>
-      </section>
-
-      <!-- ⑤ الملاحظات -->
-      <section class="step" data-bg="assets/images/bg-5.jpg" data-step="4">
-        <div class="panel">
-          <h2 class="sec-title">بكل محبة</h2>
-          <p class="sec-sub">ملاحظات لراحتكم وسعادتكم</p>
-
-          <div class="notes">
-            <div class="note">
-              <div class="note-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-              </div>
-              <p>يُرجى التوجّه إلى الصالة مباشرة في الموعد المحدد</p>
-            </div>
-
-            <div class="note">
-              <div class="note-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-                  <circle cx="12" cy="13" r="4"/><line x1="2" y1="2" x2="22" y2="22"/>
-                </svg>
-              </div>
-              <p>يُرجى عدم التصوير بالجوال حفاظاً على الخصوصية</p>
-            </div>
-
-            <div class="note">
-              <div class="note-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/>
-                  <line x1="17" y1="4" x2="22" y2="9"/><line x1="22" y1="4" x2="17" y2="9"/>
-                </svg>
-              </div>
-              <p>إدارة الصالة تنوه بمنع اصطحاب الأطفال</p>
-            </div>
-          </div>
-
-          <a class="action-pill rsvp-pill" id="rsvpBtn" href="https://api.whatsapp.com/send?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D9%8A%D8%B4%D8%B1%D9%81%D9%86%D9%8A%20%D8%AA%D8%A3%D9%83%D9%8A%D8%AF%20%D8%AD%D8%B6%D9%88%D8%B1%20%D8%AD%D9%81%D9%84%20%D8%B2%D9%81%D8%A7%D9%81%20%D8%B7%D8%A7%D8%B1%D9%82%20%D9%88%D8%AC%D9%86%D9%8A%D9%86%20%F0%9F%8C%B8" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            <span>تأكيد الحضور عبر واتساب</span>
-          </a>
-        </div>
-      </section>
-
-      <!-- ⑥ الختام -->
-      <section class="step" data-bg="assets/images/bg-6.jpg" data-step="5">
-        <div class="panel ghost">
-          <div class="divider" style="margin-top:0"><i></i><b></b><i></i></div>
-          <p class="dua">بَارَكَ اللَّهُ لَهُمَا وَبَارَكَ عَلَيْهِمَا<br>وَجَمَعَ بَيْنَهُمَا فِي خَيْر</p>
-          <p class="couple-line">طارق &amp; جنين</p>
-          <p class="footer-small">دعوة زفاف · ٢٠٢٦</p>
-
-          <div style="display:grid;gap:6px;margin-top:14px">
-            <button class="action-pill share-pill" id="shareBtn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-              <span>مشاركة بطاقة الدعوة</span>
-            </button>
-            <a class="action-pill rsvp-pill" href="https://api.whatsapp.com/send?text=%D8%A3%D9%84%D9%81%20%D9%85%D8%A8%D8%B1%D9%88%D9%83%20%D9%84%D9%84%D8%B9%D8%B1%D9%88%D8%B3%D9%8A%D9%86%20%D8%B7%D8%A7%D8%B1%D9%82%20%D9%88%D8%AC%D9%86%D9%8A%D9%86%D8%8C%20%D8%A8%D8%A7%D8%B1%D9%83%20%D8%A7%D9%84%D9%84%D9%87%20%D9%84%D9%83%D9%85%D8%A7%20%D9%88%D8%AC%D9%85%D8%B9%20%D8%A8%D9%8A%D9%86%D9%83%D9%85%D8%A7%20%D9%81%D9%8A%20%D8%AE%D9%8A%D8%B1%20%F0%9F%8E%89%F0%9F%92%8D" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-              <span>إرسال تهنئة عبر واتساب</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- شريط الإبهام السفلي الذكي للجوال -->
-    <footer class="thumb-bar" id="thumbBar">
-      <button class="nav-arrow" id="prevBtn" aria-label="السابق" title="الخطوة السابقة" hidden>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+      <!-- ختم الشمع الذهبي الملكي البارز في المنتصف -->
+      <button class="wax-seal-btn" id="waxSealBtn" aria-label="افتح المغلف">
+        <img src="assets/images/crown.png" alt="ختم التاج الملكي" style="width: 48px; height: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35)); pointer-events: none;">
       </button>
 
-      <button class="main-btn" id="nextBtn">
-        <span id="nextBtnText">افتح الدعوة</span>
-        <svg id="nextBtnIco" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
-      </button>
-    </footer>
+    </div>
 
+  </div>
+
+  <!-- توجيه النقر -->
+  <div class="envelope-prompt-text" id="envelopePrompt">
+    <div class="prompt-badge">
+      <span>✉️ لديكَ دعوة عقد قران خاصة</span>
+      <span>•</span>
+      <span>اضغط لفتح المغلف 🕊️</span>
+    </div>
+    <p class="prompt-sub">انقر فوق المغلف أو الختم الذهبي لبدء الاحتفال والموسيقى</p>
   </div>
 
 </div>
 
-<!-- عنصر الصوت للموسيقى الملكية في الخلفية -->
-<audio id="weddingAudio" src="assets/audio/royal.mp3" loop preload="auto" playsinline webkit-playsinline></audio>
+<!-- ================================================================
+     بطاقة الدعوة الأساسية (تفتح بعد نقر المغلف)
+     ================================================================ -->
+<main class="mobile-wrapper" id="mainWrapper">
 
-<!-- مشغل يوتيوب المخفي كاحتياط -->
-<div id="ytHost" aria-hidden="true"><div id="ytPlayer"></div></div>
+  <article class="mobile-invitation-card" id="invitationCard">
 
+    <!-- ================================================================
+         شعار التاج الملكي وحمامتي السلام (crown.png)
+         ================================================================ -->
+    <header class="emblem-section">
+      <img class="crown-img" src="assets/images/crown.png" alt="التاج الملكي مع حمامتي السلام">
+
+      <!-- البسملة الشريفة الكبرى -->
+      <h1 class="bismillah-title">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</h1>
+
+      <!-- الآية القرآنية الكريمة المذهبة -->
+      <div class="ayah-box">
+        <p class="ayah-content">
+          <span class="ayah-bracket">﴿</span>
+          وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+          <span class="ayah-bracket">﴾</span>
+        </p>
+      </div>
+    </header>
+
+    <!-- ================================================================
+         ديباجة الدعوة وأسماء الآباء وحرف الواو الملون المميز
+         ================================================================ -->
+    <section>
+      <h2 class="invite-heading">يَتَشَرَّفُ</h2>
+
+      <div class="parents-names-row">
+        <span class="parent-name">الدكتور عمر عبد الهادي</span>
+
+        <!-- حرف الواو بلون مميز ومشيع ساحر كما طلب المستخدم -->
+        <span class="distinct-waw" title="و">و</span>
+
+        <span class="parent-name">السيد/ زهدي كمال أبو عودة</span>
+      </div>
+
+      <p class="contract-subtitle">لِحُضُورِ عَقْدِ قِرَانِ نَجْلَيْهِمَا</p>
+
+      <!-- فاصل مذهب مع قلب -->
+      <div class="gold-divider">
+        <span class="divider-line"></span>
+        <span class="divider-heart">♥</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- أسماء العروسين بالخط الذهبي ورأس القلب الأحمر النابض مع تفاعل النقر -->
+      <div class="couple-block" id="coupleTouchBlock" title="انقر لمشاركة الفرحة وانفجار القلوب والنجوم">
+        <div class="couple-names-flex">
+          <span class="couple-item groom-name-highlight">المهندس إبراهيم</span>
+
+          <!-- رمز رأس القلب الأحمر النابض بين الاسمين (كما طُلب بالحرف) -->
+          <span class="red-heart-ruby" id="beatingHeart">
+            <svg viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="pureRubyGrad" cx="38%" cy="28%" r="70%">
+                  <stop offset="0%" stop-color="#fca5a5"/>
+                  <stop offset="25%" stop-color="#ef4444"/>
+                  <stop offset="65%" stop-color="#dc2626"/>
+                  <stop offset="95%" stop-color="#991b1b"/>
+                  <stop offset="100%" stop-color="#7f1d1d"/>
+                </radialGradient>
+                <linearGradient id="pureRubySheen" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+                  <stop offset="50%" stop-color="#ffffff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M20 33.5 C 19 33.5, 3 22.5, 3 11.5 C 3 5.5, 7.5 1.5, 13 1.5 C 16.5 1.5, 18.8 3.2, 20 5 C 21.2 3.2, 23.5 1.5, 27 1.5 C 32.5 1.5, 37 5.5, 37 11.5 C 37 22.5, 21 33.5, 20 33.5 Z" fill="url(#pureRubyGrad)"/>
+              <path d="M13 3.5 C 9 3.5, 5.5 6.5, 5.5 11 C 5.5 15, 10 20, 16 25 C 13 20, 10 16, 10 11 C 10 7.5, 12 5, 15 4 Z" fill="url(#pureRubySheen)"/>
+              <circle cx="27" cy="8" r="2.2" fill="#ffffff" opacity="0.9"/>
+            </svg>
+          </span>
+
+          <span class="couple-item">المهندسة رزان</span>
+        </div>
+        <p class="tap-hint"><span>✨ انقر على الاسمين لنبضات الفرحة ✨</span></p>
+      </div>
+
+      <!-- فاصل مذهب مع قلب ثانٍ -->
+      <div class="gold-divider">
+        <span class="divider-line"></span>
+        <span class="divider-heart">♥</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- تفاصيل الموعد والوقت -->
+      <div class="date-highlight">يَوْمَ الجُمُعَةِ 27 / 11 / 2026</div>
+
+      <div style="text-align:center;">
+        <div class="time-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span>السَّاعَة ٣ عَصْراً — بَعْدَ صَلَاةِ العَصْرِ مُبَاشَرَةً</span>
+        </div>
+      </div>
+
+      <!-- العداد التنازلي التفاعلي الملون بدرجات الباستيل -->
+      <div class="countdown-row" id="countdownGrid" aria-label="العداد التنازلي">
+        <div class="cd-cell c-days">
+          <div class="val" id="dayBox">00</div>
+          <div class="lbl">يَوْم</div>
+        </div>
+        <div class="cd-cell c-hours">
+          <div class="val" id="hourBox">00</div>
+          <div class="lbl">سَاعَة</div>
+        </div>
+        <div class="cd-cell c-mins">
+          <div class="val" id="minBox">00</div>
+          <div class="lbl">دَقِيقَة</div>
+        </div>
+        <div class="cd-cell c-secs">
+          <div class="val" id="secBox">00</div>
+          <div class="lbl">ثَانِيَة</div>
+        </div>
+      </div>
+
+      <!-- الدعاء المبارك -->
+      <div class="dua-section">
+        <p class="dua-script">
+          بَارَكَ اللَّهُ لَهُمَا وَبَارَكَ عَلَيْهِمَا<br>
+          وَجَمَعَ بَيْنَهُمَا فِي خَيْر
+        </p>
+      </div>
+
+      <!-- أزرار الإجراءات (تم حذف زر واتساب بناء على طلب المستخدم) -->
+      <div class="action-buttons-list">
+
+        <!-- حفظ الموعد في التقويم -->
+        <button class="btn-action-mobile btn-cal" id="saveCalendarBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+            <path d="m9 16 2 2 4-4"/>
+          </svg>
+          <span>أضف الموعد لتقويم هاتفك</span>
+        </button>
+
+        <!-- مشاركة بطاقة الدعوة -->
+        <button class="btn-action-mobile btn-share" id="shareCardBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+          </svg>
+          <span>مشاركة بطاقة الدعوة</span>
+        </button>
+
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<!-- ================================================================
+     البرمجة التفاعلية:
+     1) فتح المغلف السري ثلاثي الأبعاد وتشغيل الموسيقى الملكية المستمرة
+     2) ملاحقة الفراشة للمؤشر وتوليد غبار البريق
+     3) تفاعل حركة الخلفية مع حركة المؤشر (Parallax Background)
+     4) تفاعل نبض وانفجار القلوب والنجوم عند النقر
+     5) العداد التنازلي وحفظ التقويم ومشاركة البطاقة
+     ================================================================ -->
 <script>
-/* ============================================================
-   1) محرك الموسيقى الملكية في الخلفية (تشغيل فوري متزامن مع زر البداية)
-   ============================================================ */
-const weddingAudio = document.getElementById('weddingAudio');
-const audioBtn     = document.getElementById('audioToggle');
+(function() {
+  'use strict';
 
-let isUserMuted   = false;
-let audioUnlocked = false;
+  /* ============================================================
+     1. محرك الموسيقى الملكية وفتح المغلف السري (Envelope & Music Engine)
+     ============================================================ */
+  const audio = document.getElementById('royalWeddingAudio');
+  const mysteryStage = document.getElementById('mysteryStage');
+  const envelopeBox = document.getElementById('envelopeBox');
+  const waxSealBtn = document.getElementById('waxSealBtn');
 
-// دالة فك قيود الصوت لمتصفحات الجوال (iOS Safari & Android)
-function unlockAudioEngine() {
-  try {
-    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-    if (AudioContextClass) {
-      if (!window.__weddingAudioCtx) {
-        window.__weddingAudioCtx = new AudioContextClass();
+  let isEnvelopeOpened = false;
+
+  function unlockAndPlayAudio() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtx) {
+        if (!window.__weddingCtx) window.__weddingCtx = new AudioCtx();
+        if (window.__weddingCtx.state === 'suspended') {
+          window.__weddingCtx.resume();
+        }
       }
-      if (window.__weddingAudioCtx.state === 'suspended') {
-        window.__weddingAudioCtx.resume();
-      }
-    }
-  } catch(e) {}
-}
+    } catch(e) {}
 
-function updateAudioUI(isPlaying) {
-  if (isPlaying) {
-    audioBtn.classList.remove('muted');
-    audioBtn.classList.add('playing');
-    audioBtn.setAttribute('title', 'كتم الموسيقى');
-  } else {
-    audioBtn.classList.add('muted');
-    audioBtn.classList.remove('playing');
-    audioBtn.setAttribute('title', 'تشغيل الموسيقى');
-  }
-}
-
-// تشغيل فوري بدون أي تأخير عند النقر
-function startMusicNow() {
-  if (isUserMuted) return;
-  unlockAudioEngine();
-  
-  if (weddingAudio) {
-    weddingAudio.muted = false;
-    weddingAudio.volume = 0.65;
-    const playPromise = weddingAudio.play();
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        audioUnlocked = true;
-        updateAudioUI(true);
-      }).catch((err) => {
-        // ينتظر أول نقرة صريحة من المستخدم
-        console.log('Audio autoplay waiting for user tap');
+    if (audio) {
+      audio.muted = false;
+      audio.volume = 0.7;
+      audio.play().catch(() => {
+        // يعاود المحاولة تلقائياً
+        const retryPlay = () => {
+          audio.play().then(() => {
+            window.removeEventListener('click', retryPlay);
+            window.removeEventListener('touchstart', retryPlay);
+          }).catch(() => {});
+        };
+        window.addEventListener('click', retryPlay, { once: true });
+        window.addEventListener('touchstart', retryPlay, { once: true });
       });
     }
   }
-}
 
-function toggleAudioMute() {
-  unlockAudioEngine();
-  if (!weddingAudio) return;
+  function openMysteryEnvelope(e) {
+    if (isEnvelopeOpened) return;
+    isEnvelopeOpened = true;
 
-  if (weddingAudio.paused) {
-    isUserMuted = false;
-    weddingAudio.muted = false;
-    weddingAudio.play().then(() => {
-      audioUnlocked = true;
-      updateAudioUI(true);
-    }).catch(() => {});
-  } else {
-    isUserMuted = true;
-    weddingAudio.pause();
-    updateAudioUI(false);
-  }
-}
+    // تشغيل الموسيقى فوراً بدون أي تأخير
+    unlockAndPlayAudio();
 
-if (weddingAudio) {
-  weddingAudio.addEventListener('playing', () => {
-    audioUnlocked = true;
-    updateAudioUI(true);
-  });
-  weddingAudio.addEventListener('pause', () => {
-    if (weddingAudio.paused) updateAudioUI(false);
-  });
-  weddingAudio.addEventListener('ended', () => {
-    weddingAudio.currentTime = 0;
-    weddingAudio.play().catch(() => {});
-  });
-}
+    // تشغيل اهتزاز لمسي خفيف للهواتف
+    if (navigator.vibrate) {
+      try { navigator.vibrate([30, 50, 30]); } catch(e){}
+    }
 
-// محاولة تشغيل تلقائي أولية
-startMusicNow();
+    // إطلاق انفجار قلوب ونجوم مبهجة من مكان النقر
+    let x = window.innerWidth / 2;
+    let y = window.innerHeight / 2;
+    if (e && e.clientX && e.clientY) {
+      x = e.clientX;
+      y = e.clientY;
+    }
+    triggerBurst(x, y);
 
-// تفاعل زر كتم / تشغيل الصوت
-audioBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  toggleAudioMute();
-});
+    // مرحلة فتح المغلف
+    mysteryStage.classList.add('opening');
 
-/* ============================================================
-   2) محرك التنقل والقصص المخصص للجوال (بدون أي أصوات تنقل)
-   ============================================================ */
-const steps        = Array.from(document.querySelectorAll('.step'));
-const storyBars    = Array.from(document.querySelectorAll('.story-bar'));
-const nextBtn      = document.getElementById('nextBtn');
-const prevBtn      = document.getElementById('prevBtn');
-const nextBtnText  = document.getElementById('nextBtnText');
-const nextBtnIco   = document.getElementById('nextBtnIco');
-const stage        = document.getElementById('stage');
-
-const bgLayers     = [document.getElementById('bg1'), document.getElementById('bg2')];
-let activeLayer    = 0;
-let index          = 0;
-
-function setBg(url){
-  if(!url) return;
-  const next = bgLayers[1 - activeLayer];
-  const curr = bgLayers[activeLayer];
-  if(next.style.backgroundImage === `url("${url}")` && next.classList.contains('on')) return;
-  next.style.backgroundImage = `url("${url}")`;
-  next.classList.remove('on');
-  void next.offsetWidth;
-  next.classList.add('on');
-  curr.classList.remove('on');
-  activeLayer = 1 - activeLayer;
-}
-
-steps.forEach(s => {
-  const u = s.dataset.bg;
-  if(u){ const img = new Image(); img.src = u; }
-});
-
-function updateStoryBars(currIdx){
-  storyBars.forEach((bar, k) => {
-    bar.classList.toggle('passed', k < currIdx);
-    bar.classList.toggle('active', k === currIdx);
-  });
-}
-
-const btnLabels = [
-  'افتح الدعوة',
-  'تفاصيل الموعد',
-  'موقع القاعة',
-  'ملاحظات هامة',
-  'خاتمة ومباركة',
-  'من البداية'
-];
-
-function goTo(i){
-  index = Math.max(0, Math.min(steps.length - 1, i));
-
-  // اهتزاز لمسي خفيف جداً للهواتف فقط بدون تشغيل أي صوت
-  if (typeof navigator !== 'undefined' && navigator.vibrate) {
-    try { navigator.vibrate(10); } catch(e){}
+    setTimeout(() => {
+      mysteryStage.classList.add('opened');
+      document.body.classList.add('invitation-open');
+    }, 700);
   }
 
-  steps.forEach((s, k) => s.classList.toggle('active', k === index));
-  setBg(steps[index].dataset.bg);
-  updateStoryBars(index);
-
-  prevBtn.hidden = (index === 0);
-
-  nextBtnText.textContent = btnLabels[index] || 'متابعة';
-  if (index === steps.length - 1) {
-    nextBtnIco.innerHTML = '<path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/>';
-  } else if (index === 0) {
-    nextBtnIco.innerHTML = '<path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>';
-  } else {
-    nextBtnIco.innerHTML = '<path d="m15 18-6-6 6-6"/>';
-  }
-
-  const activePanel = steps[index].querySelector('.panel');
-  if (activePanel) activePanel.scrollTo({ top: 0, behavior: 'auto' });
-
-  try { history.replaceState(null, '', '#step' + (index + 1)); } catch(e){}
-}
-
-// أزرار التنقل: تشغيل الموسيقى فوراً على الجوال عند الضغط على زر البداية أو أي تنقل
-nextBtn.addEventListener('click', () => {
-  startMusicNow();
-  if (index === steps.length - 1) goTo(0);
-  else goTo(index + 1);
-});
-
-// استجابة فورية فائقة السرعة للمس على الهواتف لزر البداية
-nextBtn.addEventListener('touchend', () => {
-  startMusicNow();
-}, { passive: true });
-
-prevBtn.addEventListener('click', () => {
-  startMusicNow();
-  if (index > 0) goTo(index - 1);
-});
-
-storyBars.forEach((bar, idx) => {
-  bar.addEventListener('click', () => {
-    startMusicNow();
-    goTo(idx);
+  envelopeBox.addEventListener('click', openMysteryEnvelope);
+  waxSealBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openMysteryEnvelope(e);
   });
-});
 
-// مستمع عام لأي تفاعل لمسي على الشاشة لفك قيود الصوت
-const unlockEvents = ['touchstart', 'touchend', 'click', 'pointerdown'];
-function globalUnlockAudio(){
-  if (!audioUnlocked && !isUserMuted) {
-    startMusicNow();
+  // استمرار تشغيل الموسيقى الملكية بلا توقف ولا زر لإيقافها
+  if (audio) {
+    audio.addEventListener('ended', () => {
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
+    });
   }
-}
-unlockEvents.forEach(evt => {
-  window.addEventListener(evt, globalUnlockAudio, { passive: true });
-});
 
-/* ============================================================
-   3) إيماءات اللمس والسحب المخصصة للجوال (Swipe)
-   ============================================================ */
-let startX = 0, startY = 0, touchActive = false;
+  /* ============================================================
+     2. ملاحقة الفراشة للمؤشر وتوليد غبار البريق (Butterfly Cursor)
+     ============================================================ */
+  const butterfly = document.getElementById('butterflyCursor');
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let currentX = mouseX;
+  let currentY = mouseY;
+  let lastSparkleTime = 0;
 
-stage.addEventListener('touchstart', (e) => {
-  if (e.touches.length !== 1) return;
-  startX = e.touches[0].clientX;
-  startY = e.touches[0].clientY;
-  touchActive = true;
-}, { passive: true });
+  const fairyColors = ['#f472b6', '#38bdf8', '#fde047', '#ef4444', '#ffffff', '#c084fc'];
 
-stage.addEventListener('touchend', (e) => {
-  if (!touchActive) return;
-  touchActive = false;
-  const endX = e.changedTouches[0].clientX;
-  const endY = e.changedTouches[0].clientY;
-  const dx = endX - startX;
-  const dy = endY - startY;
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
 
-  // سحب أفقي
-  if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
-    if (dx < 0) {
-      if (index === steps.length - 1) goTo(0);
-      else goTo(index + 1);
-    } else {
-      if (index > 0) goTo(index - 1);
+    // توليد ذرات غبار بريق سحرية ناعمة أثناء حركة الفأرة
+    const now = Date.now();
+    if (now - lastSparkleTime > 45) {
+      lastSparkleTime = now;
+      createFairyDust(mouseX, mouseY);
+    }
+  }, { passive: true });
+
+  function renderCursor() {
+    // حركة انسيابية ناعمة (Lerp)
+    currentX += (mouseX - currentX) * 0.22;
+    currentY += (mouseY - currentY) * 0.22;
+
+    if (butterfly) {
+      const angle = (mouseX - currentX) * 1.5;
+      butterfly.style.left = currentX + 'px';
+      butterfly.style.top = currentY + 'px';
+      butterfly.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+    }
+    requestAnimationFrame(renderCursor);
+  }
+  requestAnimationFrame(renderCursor);
+
+  function createFairyDust(x, y) {
+    const sparkle = document.createElement('span');
+    sparkle.className = 'fairy-sparkle';
+    const size = (3 + Math.random() * 5).toFixed(1);
+    const color = fairyColors[Math.floor(Math.random() * fairyColors.length)];
+    const dx = ((Math.random() - 0.5) * 35).toFixed(0) + 'px';
+    const dy = ((Math.random() - 0.5) * 35 + 15).toFixed(0) + 'px';
+
+    sparkle.style.left = x + 'px';
+    sparkle.style.top = y + 'px';
+    sparkle.style.width = size + 'px';
+    sparkle.style.height = size + 'px';
+    sparkle.style.background = color;
+    sparkle.style.boxShadow = `0 0 8px ${color}`;
+    sparkle.style.setProperty('--dx', dx);
+    sparkle.style.setProperty('--dy', dy);
+
+    document.body.appendChild(sparkle);
+    setTimeout(() => {
+      if (sparkle.parentNode) sparkle.parentNode.removeChild(sparkle);
+    }, 750);
+  }
+
+  /* ============================================================
+     3. تفاعل حركة الخلفية مع حركة المؤشر (Interactive Parallax Background)
+     ============================================================ */
+  const ambientBg = document.getElementById('ambientBg');
+
+  window.addEventListener('mousemove', (e) => {
+    const normX = (e.clientX / window.innerWidth - 0.5) * 2;
+    const normY = (e.clientY / window.innerHeight - 0.5) * 2;
+
+    // حركة خفيفة ثلاثية الأبعاد تعطي عمقاً شاعرياً
+    const moveX = (normX * -25).toFixed(1);
+    const moveY = (normY * -25).toFixed(1);
+    const rotX = (normY * 4).toFixed(2);
+    const rotY = (normX * -4).toFixed(2);
+
+    if (ambientBg) {
+      ambientBg.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+    }
+  }, { passive: true });
+
+  // تفاعل بسيط للشاشات التي تدعم اللمس عند السحب
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches[0]) {
+      const t = e.touches[0];
+      const normX = (t.clientX / window.innerWidth - 0.5) * 2;
+      const normY = (t.clientY / window.innerHeight - 0.5) * 2;
+      if (ambientBg) {
+        ambientBg.style.transform = `translate3d(${(normX * -15).toFixed(1)}px, ${(normY * -15).toFixed(1)}px, 0)`;
+      }
+    }
+  }, { passive: true });
+
+  /* ============================================================
+     4. العداد التنازلي الدقيق (الجمعة 27/11/2026 - الساعة 3:00 عصراً)
+     ============================================================ */
+  const TARGET_MILLIS = new Date('2026-11-27T15:00:00+02:00').getTime();
+
+  const elD = document.getElementById('dayBox');
+  const elH = document.getElementById('hourBox');
+  const elM = document.getElementById('minBox');
+  const elS = document.getElementById('secBox');
+
+  const pad = (n) => String(n).padStart(2, '0');
+
+  function updateCountdown() {
+    const diff = TARGET_MILLIS - Date.now();
+    if (diff <= 0) {
+      elD.textContent = elH.textContent = elM.textContent = elS.textContent = '00';
+      return;
+    }
+    const totalSecs = Math.floor(diff / 1000);
+    const d = Math.floor(totalSecs / 86400);
+    const h = Math.floor((totalSecs % 86400) / 3600);
+    const m = Math.floor((totalSecs % 3600) / 60);
+    const s = totalSecs % 60;
+
+    elD.textContent = pad(d);
+    elH.textContent = pad(h);
+    elM.textContent = pad(m);
+    elS.textContent = pad(s);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  /* ============================================================
+     5. تفاعل نبض وانفجار القلوب والنجوم عند النقر (Heart Burst)
+     ============================================================ */
+  const burstLayer = document.getElementById('heartBurstLayer');
+  const coupleBlock = document.getElementById('coupleTouchBlock');
+  const beatingHeart = document.getElementById('beatingHeart');
+
+  const burstSymbols = ['❤️', '💖', '💕', '🌹', '🌸', '✨', '💎', '🤍', '🕊️'];
+
+  function triggerBurst(clientX, clientY) {
+    if (navigator.vibrate) {
+      try { navigator.vibrate(15); } catch(e){}
+    }
+
+    const count = 20;
+    for (let i = 0; i < count; i++) {
+      const item = document.createElement('span');
+      item.className = 'burst-item';
+      item.textContent = burstSymbols[i % burstSymbols.length];
+
+      const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.5;
+      const distance = 80 + Math.random() * 130;
+      const tx = Math.cos(angle) * distance;
+      const ty = Math.sin(angle) * distance - 40;
+      const rot = (Math.random() - 0.5) * 180 + 'deg';
+
+      item.style.left = clientX + 'px';
+      item.style.top = clientY + 'px';
+      item.style.fontSize = (16 + Math.random() * 18).toFixed(0) + 'px';
+      item.style.setProperty('--tx', tx.toFixed(0) + 'px');
+      item.style.setProperty('--ty', ty.toFixed(0) + 'px');
+      item.style.setProperty('--rot', rot);
+
+      burstLayer.appendChild(item);
+
+      setTimeout(() => {
+        if (item.parentNode) item.parentNode.removeChild(item);
+      }, 1500);
     }
   }
-  // سحب رأسي
-  else if (Math.abs(dy) > 50 && Math.abs(dy) > Math.abs(dx) * 1.5) {
-    if (dy < 0) {
-      if (index === steps.length - 1) goTo(0);
-      else goTo(index + 1);
-    } else {
-      if (index > 0) goTo(index - 1);
+
+  function handleBurstEvent(e) {
+    let x = window.innerWidth / 2;
+    let y = window.innerHeight / 2;
+    if (e.clientX && e.clientY) {
+      x = e.clientX;
+      y = e.clientY;
+    } else if (e.touches && e.touches[0]) {
+      x = e.touches[0].clientX;
+      y = e.touches[0].clientY;
     }
+    triggerBurst(x, y);
+    unlockAndPlayAudio();
   }
-}, { passive: true });
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowLeft' || e.key === 'ArrowDown' || e.key === ' ') {
-    e.preventDefault();
-    if (index === steps.length - 1) goTo(0);
-    else goTo(index + 1);
-  } else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
-    e.preventDefault();
-    if (index > 0) goTo(index - 1);
-  }
-});
+  coupleBlock.addEventListener('click', handleBurstEvent);
+  beatingHeart.addEventListener('click', (e) => {
+    e.stopPropagation();
+    handleBurstEvent(e);
+  });
 
-/* ============================================================
-   4) حفظ الموعد في التقويم (.ICS Generator)
-   ============================================================ */
-document.getElementById('addToCalBtn').addEventListener('click', () => {
-  const ics = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'PRODID:-//Tariq & Janeen Wedding//AR',
-    'CALSCALE:GREGORIAN',
-    'METHOD:PUBLISH',
-    'BEGIN:VEVENT',
-    'UID:wedding-tariq-janeen-2026@invitation',
-    'DTSTAMP:20261103T180000Z',
-    'DTSTART:20261112T140000Z',
-    'DTEND:20261112T190000Z',
-    'SUMMARY:حفل زفاف طارق وجنين 💍',
-    'DESCRIPTION:بكل الحب ندعوكم لحضور حفل زفاف نجلنا طارق وجنين في صالة لافندر شارع النصر غزة',
-    'LOCATION:صالة لافندر - شارع النصر - غزة',
-    'STATUS:CONFIRMED',
-    'END:VEVENT',
-    'END:VCALENDAR'
-  ].join('\r\n');
+  /* ============================================================
+     6. حفظ الموعد في التقويم ومشاركة البطاقة
+     ============================================================ */
+  document.getElementById('saveCalendarBtn').addEventListener('click', () => {
+    const icsContent = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Ibrahim & Razan Wedding Invitation//AR',
+      'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
+      'UID:wedding-ibrahim-razan-2026@invitation',
+      'DTSTAMP:20261123T120000Z',
+      'DTSTART:20261127T130000Z',
+      'DTEND:20261127T180000Z',
+      'SUMMARY:عقد قران المهندس إبراهيم والمهندسة رزان 💍❤️',
+      'DESCRIPTION:يتشرف الدكتور عمر عبد الهادي والسيد/ زهدي كمال أبو عودة بدعوتكم لحضور عقد قران نجليهما المهندس إبراهيم والمهندسة رزان. بارك الله لهما وبارك عليهما وجمع بينهما في خير.',
+      'LOCATION:عقد قران إبراهيم & رزان',
+      'STATUS:CONFIRMED',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
 
-  const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'wedding-tariq-and-janeen.ics';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-});
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'wedding-ibrahim-and-razan.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
 
-/* ============================================================
-   5) مشاركة الدعوة عبر الجوال (Web Share API)
-   ============================================================ */
-document.getElementById('shareBtn').addEventListener('click', () => {
-  const shareData = {
-    title: 'دعوة زفاف طارق & جنين',
-    text: 'بكل الحب والود ندعوكم لحضور حفل زفاف طارق وجنين 🌸 الخميس ١٢ نوفمبر ٢٠٢٦',
-    url: window.location.href
-  };
+  document.getElementById('shareCardBtn').addEventListener('click', () => {
+    const shareData = {
+      title: 'عقد قران | المهندس إبراهيم & المهندسة رزان',
+      text: 'بسم الله الرحمن الرحيم ✨ نتشرف بدعوتكم لحضور عقد قران نجليهما: المهندس إبراهيم ❤️ المهندسة رزان — الجمعة 27/11/2026 الساعة 3 عصراً',
+      url: window.location.href
+    };
 
-  if (navigator.share) {
-    navigator.share(shareData).catch(() => {});
-  } else {
-    const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareData.text + ' ' + shareData.url)}`;
-    window.open(waUrl, '_blank');
-  }
-});
+    if (navigator.share) {
+      navigator.share(shareData).catch(() => {});
+    } else {
+      const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareData.text + '\n' + shareData.url)}`;
+      window.open(waUrl, '_blank');
+    }
+  });
 
-/* ============================================================
-   6) العد التنازلي
-   ============================================================ */
-const TARGET = new Date('2026-11-12T16:00:00+02:00').getTime();
-const elD = document.getElementById('cd-d');
-const elH = document.getElementById('cd-h');
-const elM = document.getElementById('cd-m');
-const elS = document.getElementById('cd-s');
-const pad = v => String(v).padStart(2, '0');
+  /* ============================================================
+     7. تساقط البتلات المتنوعة وذرات الماس
+     ============================================================ */
+  const petalsLayer = document.getElementById('petalsLayer');
 
-function tick(){
-  const diff = TARGET - Date.now();
-  if (diff <= 0) {
-    elD.textContent = elH.textContent = elM.textContent = elS.textContent = '00';
-    return;
-  }
-  const s = Math.floor(diff / 1000);
-  elD.textContent = pad(Math.floor(s / 86400));
-  elH.textContent = pad(Math.floor((s % 86400) / 3600));
-  elM.textContent = pad(Math.floor((s % 3600) / 60));
-  elS.textContent = pad(s % 60);
-}
-
-/* ============================================================
-   7) البتلات والفراشات والاحتفالات (ألوان سحر الشفق)
-   ============================================================ */
-(function petals(){
-  const box = document.getElementById('petals');
-  const palettes = [
-    ['#ffe4e6', '#fb7185', '#e11d48'],
-    ['#fef3c7', '#f59e0b', '#d97706'],
-    ['#f3e8ff', '#c084fc', '#9333ea'],
-    ['#e0f2fe', '#38bdf8', '#0284c7'],
-    ['#d1fae5', '#34d399', '#059669'],
-    ['#ffedd5', '#fb923c', '#ea580c'],
+  const petalColors = [
+    // بتلات الورد الأحمر المخملي (Red Roses)
+    ['#fecaca', '#ef4444', '#b91c1c'],
+    ['#fee2e2', '#dc2626', '#991b1b'],
+    ['#fca5a5', '#e11d48', '#881337'],
+    // بتلات الورد الوردي (Pink Roses)
     ['#fce7f3', '#f472b6', '#db2777'],
-    ['#fef9c3', '#facc15', '#ca8a04']
+    ['#fdf2f8', '#fbcfe8', '#ec4899'],
+    // بتلات الزهور الزرقاء (Blue Blossoms)
+    ['#e0f2fe', '#7dd3fc', '#0284c7'],
+    ['#f0f9ff', '#38bdf8', '#0369a1'],
+    // بتلات بيضاء
+    ['#ffffff', '#f1f5f9', '#cbd5e1']
   ];
-  const n = window.innerWidth < 640 ? 12 : 22;
-  for (let i = 0; i < n; i++){
-    const p = document.createElement('span');
-    p.className = 'petal';
-    const c = palettes[i % palettes.length];
-    p.style.background = `radial-gradient(circle at 35% 30%, ${c[0]}, ${c[1]} 55%, ${c[2]} 100%)`;
-    p.style.boxShadow = `0 0 8px ${c[1]}55`;
-    const size = (7 + Math.random() * 9).toFixed(1);
-    p.style.left = (Math.random() * 100) + '%';
-    p.style.width = size + 'px';
-    p.style.height = size + 'px';
-    p.style.animationDuration = (14 + Math.random() * 16).toFixed(1) + 's';
-    p.style.animationDelay = (-Math.random() * 20).toFixed(1) + 's';
-    p.style.setProperty('--drift', ((Math.random() - 0.5) * 140).toFixed(0) + 'px');
-    p.style.opacity = (0.28 + Math.random() * 0.45).toFixed(2);
-    box.appendChild(p);
+
+  const sparkles = ['💎', '✨', '✦', '✧', '⋆'];
+
+  function spawnPetals() {
+    const count = 18;
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('span');
+      p.className = 'petal-drift';
+      const c = petalColors[i % petalColors.length];
+      p.style.background = `radial-gradient(circle at 35% 30%, ${c[0]} 0%, ${c[1]} 60%, ${c[2]} 100%)`;
+      p.style.boxShadow = `0 0 6px ${c[1]}55`;
+      const size = (8 + Math.random() * 8).toFixed(1);
+      p.style.left = (Math.random() * 100) + '%';
+      p.style.width = size + 'px';
+      p.style.height = (size * 1.3) + 'px';
+      p.style.animationDuration = (12 + Math.random() * 15).toFixed(1) + 's';
+      p.style.animationDelay = (-Math.random() * 20).toFixed(1) + 's';
+      p.style.setProperty('--drift', ((Math.random() - 0.5) * 120).toFixed(0) + 'px');
+      p.style.setProperty('--max-op', (0.35 + Math.random() * 0.45).toFixed(2));
+      petalsLayer.appendChild(p);
+    }
   }
-})();
 
-(function butterflies(){
-  const box = document.getElementById('butterflies');
-  const palettes = [
-    ['#ff758c', '#ff7eb3', '#fef08a'],
-    ['#8a2be2', '#c084fc', '#67e8f9'],
-    ['#059669', '#34d399', '#fde047'],
-    ['#f43f5e', '#fb923c', '#fef08a'],
-    ['#3b82f6', '#8b5cf6', '#ec4899'],
-    ['#ec4899', '#a855f7', '#38bdf8']
-  ];
-  const n = window.innerWidth < 640 ? 4 : 7;
-  for (let i = 0; i < n; i++){
-    const wrap = document.createElement('div');
-    wrap.className = 'butterfly ' + (i % 2 ? 'rtl' : 'ltr');
-    wrap.style.animationDuration = (16 + Math.random() * 16).toFixed(1) + 's';
-    wrap.style.animationDelay = (-Math.random() * 16).toFixed(1) + 's';
-    wrap.style.top = (12 + Math.random() * 60) + '%';
-    wrap.style.transform = 'scale(' + (0.6 + Math.random() * 0.6).toFixed(2) + ')';
-
-    const inner = document.createElement('div');
-    inner.className = 'inner';
-    inner.style.animationDuration = (2.6 + Math.random() * 2).toFixed(1) + 's';
-
-    const pal = palettes[i % palettes.length];
-    const uid = 'bw' + i;
-    inner.innerHTML = `
-      <svg viewBox="0 0 40 32" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="${uid}a" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="${pal[0]}"/>
-            <stop offset="55%" stop-color="${pal[1]}"/>
-            <stop offset="100%" stop-color="${pal[2]}"/>
-          </linearGradient>
-          <linearGradient id="${uid}b" x1="1" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="${pal[0]}"/>
-            <stop offset="55%" stop-color="${pal[1]}"/>
-            <stop offset="100%" stop-color="${pal[2]}"/>
-          </linearGradient>
-        </defs>
-        <g class="wing wing-left">
-          <ellipse cx="13" cy="11" rx="10" ry="9" fill="url(#${uid}a)" opacity=".92"/>
-          <ellipse cx="11" cy="22" rx="7" ry="6" fill="url(#${uid}b)" opacity=".85"/>
-        </g>
-        <g class="wing wing-right">
-          <ellipse cx="27" cy="11" rx="10" ry="9" fill="url(#${uid}a)" opacity=".92"/>
-          <ellipse cx="29" cy="22" rx="7" ry="6" fill="url(#${uid}b)" opacity=".85"/>
-        </g>
-        <ellipse cx="20" cy="16" rx="1.6" ry="10" fill="#2d1338"/>
-        <circle cx="20" cy="5" r="1.7" fill="#2d1338"/>
-        <path d="M20 5 Q16 1 13.5 2" stroke="#2d1338" stroke-width=".7" fill="none"/>
-        <path d="M20 5 Q24 1 26.5 2" stroke="#2d1338" stroke-width=".7" fill="none"/>
-      </svg>
-    `;
-    wrap.appendChild(inner);
-    box.appendChild(wrap);
+  function spawnSparkles() {
+    const count = 12;
+    for (let i = 0; i < count; i++) {
+      const s = document.createElement('span');
+      s.className = 'sparkle-twinkle';
+      s.textContent = sparkles[i % sparkles.length];
+      s.style.left = (Math.random() * 100) + '%';
+      s.style.fontSize = (11 + Math.random() * 10).toFixed(0) + 'px';
+      s.style.color = (i % 2 === 0) ? '#38bdf8' : '#f472b6';
+      s.style.animationDuration = (12 + Math.random() * 12).toFixed(1) + 's';
+      s.style.animationDelay = (-Math.random() * 14).toFixed(1) + 's';
+      s.style.setProperty('--op', (0.35 + Math.random() * 0.4).toFixed(2));
+      petalsLayer.appendChild(s);
+    }
   }
-})();
 
-(function celebrations(){
-  const box = document.getElementById('celebrations');
-  const glyphs = [
-    { c: '✨', col: '#fbbf24' },
-    { c: '✧',  col: '#38bdf8' },
-    { c: '♡',  col: '#f472b6' },
-    { c: '❋',  col: '#c084fc' },
-    { c: '✿',  col: '#fb7185' },
-    { c: '⋆',  col: '#fde047' },
-    { c: '✦',  col: '#34d399' },
-    { c: '💫', col: '#fb923c' },
-    { c: '♥',  col: '#ec4899' }
-  ];
-  const n = window.innerWidth < 640 ? 12 : 20;
-  for (let i = 0; i < n; i++){
-    const el = document.createElement('span');
-    el.className = 'celeb';
-    const g = glyphs[i % glyphs.length];
-    el.textContent = g.c;
-    el.style.color = g.col;
-    el.style.left = (Math.random() * 100) + '%';
-    el.style.fontSize = (12 + Math.random() * 14).toFixed(0) + 'px';
-    el.style.animationDuration = (12 + Math.random() * 10).toFixed(1) + 's';
-    el.style.animationDelay = (-Math.random() * 14).toFixed(1) + 's';
-    el.style.setProperty('--op', (0.5 + Math.random() * 0.4).toFixed(2));
-    el.style.setProperty('--d1', ((Math.random() - 0.5) * 80).toFixed(0) + 'px');
-    el.style.setProperty('--d2', ((Math.random() - 0.5) * 120).toFixed(0) + 'px');
-    box.appendChild(el);
-  }
-})();
+  spawnPetals();
+  spawnSparkles();
 
-/* ============================================================
-   8) بدء التشغيل
-   ============================================================ */
-(function init(){
-  const m = location.hash.match(/^#step(\d+)$/);
-  const start = m ? Math.min(parseInt(m[1], 10) - 1, steps.length - 1) : 0;
-  const first = steps[start].dataset.bg;
-  bgLayers[0].style.backgroundImage = `url("${first}")`;
-  bgLayers[0].classList.add('on');
-  goTo(start);
-  tick();
-  setInterval(tick, 1000);
 })();
 </script>
 
